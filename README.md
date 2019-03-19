@@ -10,6 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Ios 9+
 
 ## Installation
 
@@ -19,6 +20,9 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'AMScrollingCards'
 ```
+## Description
+
+This pod was created to offer a ui component of swiping horizontal cards with a peek of next and previous cards using a collection view to make sure its reliable and memory efficient
 
 ## Author
 
