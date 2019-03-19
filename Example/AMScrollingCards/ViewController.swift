@@ -39,9 +39,10 @@ class ViewController: UIViewController {
          3. custom cell identifier
          4. delegate
          5. nib file of custom cell
+         6. spacing between cards defaults to 0
          =================================================
          */
-        swipingCardsManager = SwipingCardsManager(frame: scrollingCardsContainer.bounds ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil))
+        swipingCardsManager = SwipingCardsManager(frame: scrollingCardsContainer.bounds ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10)
         // grab cards view
         scrollingCardsView = swipingCardsManager.cardsView
         // add subview and constraints

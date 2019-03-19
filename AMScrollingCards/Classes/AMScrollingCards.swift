@@ -30,11 +30,13 @@ public final class SwipingCardsManager: NSObject {
     private var indexOfCellBeforeDragging = 0
     private var lastIndex = 0
     private var pageControl: UIPageControl!
+    private var spacing: CGFloat!
     weak var delegate: SwipingCardsManagerDelegate?
     private var identifier: String!
     
-    public init(frame: CGRect, numberOfItems: Int, identifier: String, delegate: SwipingCardsManagerDelegate, cellNib: UINib) {
+    public init(frame: CGRect, numberOfItems: Int, identifier: String, delegate: SwipingCardsManagerDelegate, cellNib: UINib, spacing: CGFloat = 0) {
         super.init()
+        self.spacing = spacing
         cardsView = UIView(frame: frame)
         self.numberOfItems = numberOfItems
         self.identifier = identifier
@@ -62,7 +64,7 @@ public final class SwipingCardsManager: NSObject {
     
     private func setupCollectionView(frame: CGRect, cellNib: UINib) {
         collectionViewLayout.scrollDirection = .horizontal
-        collectionViewLayout.minimumLineSpacing = 0
+        collectionViewLayout.minimumLineSpacing = spacing
         collectionView = UICollectionView(frame: frame, collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.showsHorizontalScrollIndicator = false
@@ -131,7 +133,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
         if didUseSwipeToSkipCell {
             
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-            let toValue = collectionViewLayout.itemSize.width * CGFloat(snapToIndex)
+            let toValue = collectionViewLayout.itemSize.width * CGFloat(snapToIndex) + spacing
             
             // Damping equal 1 => no oscillations => decay animation:
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
