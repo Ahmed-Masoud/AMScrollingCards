@@ -1,0 +1,6 @@
+framework module Pods_AMScrollingCards_Example {
+  umbrella header "Pods-AMScrollingCards_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'AMScrollingCards'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of AMScrollingCards.'
+  s.summary          = 'This pod was created to offer a ui component of swiping horizontal cards with a peek of next and previous cards using a collection view to make sure its reliable and memory efficient'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

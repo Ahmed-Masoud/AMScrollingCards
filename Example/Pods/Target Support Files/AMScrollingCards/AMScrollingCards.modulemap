@@ -1,0 +1,6 @@
+framework module AMScrollingCards {
+  umbrella header "AMScrollingCards-umbrella.h"
+
+  export *
+  module * { export * }
+}

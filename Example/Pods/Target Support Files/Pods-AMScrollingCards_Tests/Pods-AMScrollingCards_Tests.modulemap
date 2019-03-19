@@ -1,0 +1,6 @@
+framework module Pods_AMScrollingCards_Tests {
+  umbrella header "Pods-AMScrollingCards_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

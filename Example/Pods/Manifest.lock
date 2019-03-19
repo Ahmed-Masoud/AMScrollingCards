@@ -1,0 +1,16 @@
+PODS:
+  - AMScrollingCards (0.1.0)
+
+DEPENDENCIES:
+  - AMScrollingCards (from `../`)
+
+EXTERNAL SOURCES:
+  AMScrollingCards:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AMScrollingCards: d70a8e0324a1bb59ebd154318b36a4b711b14d1b
+
+PODFILE CHECKSUM: 1c8e04997b20e24e31dcc14a1fdd0a8669a5cb9f
+
+COCOAPODS: 1.5.3
