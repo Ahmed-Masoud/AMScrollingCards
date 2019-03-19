@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AMScrollingCards_Example' do
+  pod 'AMScrollingCards', :path => '../'
+
+  target 'AMScrollingCards_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
