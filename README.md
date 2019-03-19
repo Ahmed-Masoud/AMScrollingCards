@@ -28,6 +28,9 @@ This pod was created to offer a ui component of swiping horizontal cards with a 
 
 Ahmed-Masoud-R, ahmed.ehab@rubikal.com
 
+## Credits
+This pod was inspired by the great tutorial found here "https://medium.com/@shaibalassiano/tutorial-horizontal-uicollectionview-with-paging-9421b479ee94"
+
 ## License
 
 AMScrollingCards is available under the MIT license. See the LICENSE file for more info.
