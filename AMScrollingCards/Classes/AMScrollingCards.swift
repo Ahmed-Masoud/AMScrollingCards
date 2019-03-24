@@ -35,6 +35,7 @@ public final class SwipingCardsManager: NSObject {
     private var spacing: CGFloat!
     weak var delegate: SwipingCardsManagerDelegate?
     private var identifier: String!
+    private var useInsetSpacing: Bool!
     
     public init(frame: CGRect,
                 numberOfItems: Int,
@@ -43,8 +44,10 @@ public final class SwipingCardsManager: NSObject {
                 cellNib: UINib,
                 spacing: CGFloat = 0,
                 selectedPageDotColor: UIColor,
-                pageDotColor: UIColor) {
+                pageDotColor: UIColor,
+                useInsetSpacing: Bool = false) {
         super.init()
+        self.useInsetSpacing = useInsetSpacing
         self.spacing = spacing
         cardsView = UIView(frame: frame)
         self.numberOfItems = numberOfItems
@@ -112,7 +115,11 @@ public final class SwipingCardsManager: NSObject {
     
     private func configureCollectionViewLayoutItemSize() {
         let inset: CGFloat = calculateSectionInset() // This inset calculation is some magic so the next and the previous cells will peek from the sides. Don't worry about it
-        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        if useInsetSpacing {
+            collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
+        } else {
+            collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        }
         
         collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.size.width - inset * 2, height: collectionViewLayout.collectionView!.frame.size.height)
     }
