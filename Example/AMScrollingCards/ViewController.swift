@@ -42,7 +42,7 @@ class ViewController: UIViewController {
          6. spacing between cards defaults to 0
          =================================================
          */
-        swipingCardsManager = SwipingCardsManager(frame: scrollingCardsContainer.bounds ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10)
+        swipingCardsManager = SwipingCardsManager(frame: scrollingCardsContainer.bounds ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue)
         // grab cards view
         scrollingCardsView = swipingCardsManager.cardsView
         // add subview and constraints

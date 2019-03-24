@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMScrollingCards'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'This pod was created to offer a ui component of swiping horizontal cards'
 
 # This description is used to generate tags and improve search results.

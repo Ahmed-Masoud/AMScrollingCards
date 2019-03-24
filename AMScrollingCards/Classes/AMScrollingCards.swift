@@ -24,8 +24,8 @@ extension SwipingCardsManagerDelegate {
 public final class SwipingCardsManager: NSObject {
     
     public var cardsView: UIView!
-    public var pageDotColor: UIColor = UIColor(hexString: "#E2E2E2")
-    public var selectedPageDotColor: UIColor = UIColor(hexString: "#929292")
+    private var pageDotColor: UIColor!
+    private var selectedPageDotColor: UIColor!
     private var collectionView: UICollectionView!
     private var collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     private var numberOfItems: Int = 0
@@ -36,13 +36,22 @@ public final class SwipingCardsManager: NSObject {
     weak var delegate: SwipingCardsManagerDelegate?
     private var identifier: String!
     
-    public init(frame: CGRect, numberOfItems: Int, identifier: String, delegate: SwipingCardsManagerDelegate, cellNib: UINib, spacing: CGFloat = 0) {
+    public init(frame: CGRect,
+                numberOfItems: Int,
+                identifier: String,
+                delegate: SwipingCardsManagerDelegate,
+                cellNib: UINib,
+                spacing: CGFloat = 0,
+                selectedPageDotColor: UIColor,
+                pageDotColor: UIColor) {
         super.init()
         self.spacing = spacing
         cardsView = UIView(frame: frame)
         self.numberOfItems = numberOfItems
         self.identifier = identifier
         self.delegate = delegate
+        self.pageDotColor = pageDotColor
+        self.selectedPageDotColor = selectedPageDotColor
         setupPageControl(frame: frame)
         setupCollectionView(frame: frame, cellNib: cellNib)
         configureCollectionViewLayoutItemSize()
