@@ -88,6 +88,7 @@ public final class SwipingCardsManager: NSObject {
         collectionView.dataSource = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "identifier")
         collectionView.register(cellNib, forCellWithReuseIdentifier: identifier)
+        collectionView.clipsToBounds = false
         setupCollectionViewConstraints()
     }
     
