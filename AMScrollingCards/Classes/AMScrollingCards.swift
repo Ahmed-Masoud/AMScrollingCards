@@ -36,6 +36,7 @@ public final class SwipingCardsManager: NSObject {
     weak var delegate: SwipingCardsManagerDelegate?
     private var identifier: String!
     private var useInsetSpacing: Bool!
+    private var usePageIndicator: Bool!
     
     public init(frame: CGRect,
                 numberOfItems: Int,
@@ -45,7 +46,8 @@ public final class SwipingCardsManager: NSObject {
                 spacing: CGFloat = 0,
                 selectedPageDotColor: UIColor,
                 pageDotColor: UIColor,
-                useInsetSpacing: Bool = false) {
+                useInsetSpacing: Bool = false,
+                usePageIndicator: Bool = true) {
         super.init()
         self.useInsetSpacing = useInsetSpacing
         self.spacing = spacing
@@ -55,6 +57,7 @@ public final class SwipingCardsManager: NSObject {
         self.delegate = delegate
         self.pageDotColor = pageDotColor
         self.selectedPageDotColor = selectedPageDotColor
+        self.usePageIndicator = usePageIndicator
         setupPageControl(frame: frame)
         setupCollectionView(frame: frame, cellNib: cellNib)
         configureCollectionViewLayoutItemSize()
@@ -98,7 +101,11 @@ public final class SwipingCardsManager: NSObject {
         collectionView.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
+        if usePageIndicator {
+            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
+        } else {
+            collectionView.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
+        }
         collectionView.layoutIfNeeded()
     }
     

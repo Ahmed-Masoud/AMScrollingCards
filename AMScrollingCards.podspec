@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMScrollingCards'
-  s.version          = '1.0.5'
+  s.version          = '1.0.7'
   s.summary          = 'This pod was created to offer a ui component of swiping horizontal cards'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 This pod was created to offer a ui component of swiping horizontal cards with a peek of next and previous cards using a collection view to make sure its reliable and memory efficient
                        DESC
 
-  s.homepage         = 'https://github.com/Ahmed-Masoud-R/AMScrollingCards'
+  s.homepage         = 'https://github.com/Ahmed-Masoud/AMScrollingCards'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Ahmed-Masoud-R' => 'ahmed.ehab@rubikal.com' }
-  s.source           = { :git => 'https://github.com/Ahmed-Masoud-R/AMScrollingCards.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Ahmed-Masoud/AMScrollingCards.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.ios.deployment_target = '10.0'
 
