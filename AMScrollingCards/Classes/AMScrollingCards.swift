@@ -161,7 +161,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
         if didUseSwipeToSkipCell {
             
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-            let toValue = collectionViewLayout.itemSize.width * CGFloat(snapToIndex) + spacing
+            let toValue = collectionViewLayout.itemSize.width * CGFloat(snapToIndex)  + (useInsetSpacing ? 0 : spacing)
             
             // Damping equal 1 => no oscillations => decay animation:
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
