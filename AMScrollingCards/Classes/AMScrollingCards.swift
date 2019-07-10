@@ -61,6 +61,8 @@ public final class SwipingCardsManager: NSObject {
         setupPageControl(frame: frame)
         setupCollectionView(frame: frame, cellNib: cellNib)
         configureCollectionViewLayoutItemSize()
+        cardsView.clipsToBounds = false
+        collectionView.clipsToBounds = false
     }
     
     private func setupPageControl(frame: CGRect) {
@@ -115,7 +117,7 @@ public final class SwipingCardsManager: NSObject {
         let cellBodyViewIsExpended = deviceIsIpad || deviceOrientationIsLandscape
         let cellBodyWidth: CGFloat = 236 + (cellBodyViewIsExpended ? 174 : 0)
         
-        let buttonWidth: CGFloat = 50
+        let buttonWidth: CGFloat = 0
         
         let inset = (collectionViewLayout.collectionView!.frame.width - cellBodyWidth + buttonWidth) / 4
         return inset
@@ -129,7 +131,7 @@ public final class SwipingCardsManager: NSObject {
             collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         }
         
-        collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.size.width - inset * 2, height: collectionViewLayout.collectionView!.frame.size.height)
+        collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.width - (spacing + 0.5) * 2, height: collectionViewLayout.collectionView!.frame.size.height)
     }
     
     private func indexOfMajorCell() -> Int {
@@ -159,18 +161,9 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
         let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
         
         if didUseSwipeToSkipCell {
-            
-            let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-            let toValue = collectionViewLayout.itemSize.width * CGFloat(snapToIndex)  + (useInsetSpacing ? 0 : spacing)
-            
-            // Damping equal 1 => no oscillations => decay animation:
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
-                scrollView.contentOffset = CGPoint(x: toValue, y: 0)
-                scrollView.layoutIfNeeded()
-            }, completion: nil)
-            
+            let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+            collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         } else {
-            // This is a much better way to scroll to a cell:
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
