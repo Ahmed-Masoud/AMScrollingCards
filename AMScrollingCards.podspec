@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMScrollingCards'
-  s.version          = '1.0.9'
+  s.version          = '1.1.0'
   s.summary          = 'This pod was created to offer a ui component of swiping horizontal cards'
   s.swift_version    = '5'
 

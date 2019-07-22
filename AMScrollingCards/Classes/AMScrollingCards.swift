@@ -15,13 +15,13 @@ public protocol SwipingCardsManagerDelegate: class {
     func didChangeCard(index: Int)
 }
 
-extension SwipingCardsManagerDelegate {
-    // making this delegate function optional
-    func didChangeCard(index: Int){}
-}
-
 @available(iOS 9.0, *)
 public final class SwipingCardsManager: NSObject {
+    
+    public enum pageIndicatorPosition {
+        case top
+        case bottom
+    }
     
     public var cardsView: UIView!
     private var pageDotColor: UIColor!
@@ -37,6 +37,7 @@ public final class SwipingCardsManager: NSObject {
     private var identifier: String!
     private var useInsetSpacing: Bool!
     private var usePageIndicator: Bool!
+    private var pageIndicatorPosition: pageIndicatorPosition!
     
     public init(frame: CGRect,
                 numberOfItems: Int,
@@ -47,7 +48,8 @@ public final class SwipingCardsManager: NSObject {
                 selectedPageDotColor: UIColor,
                 pageDotColor: UIColor,
                 useInsetSpacing: Bool = false,
-                usePageIndicator: Bool = true) {
+                usePageIndicator: Bool = true,
+                pageIndicatorPosition: pageIndicatorPosition = .top) {
         super.init()
         self.useInsetSpacing = useInsetSpacing
         self.spacing = spacing
@@ -58,6 +60,7 @@ public final class SwipingCardsManager: NSObject {
         self.pageDotColor = pageDotColor
         self.selectedPageDotColor = selectedPageDotColor
         self.usePageIndicator = usePageIndicator
+        self.pageIndicatorPosition = pageIndicatorPosition
         setupPageControl(frame: frame)
         setupCollectionView(frame: frame, cellNib: cellNib)
         configureCollectionViewLayoutItemSize()
@@ -79,7 +82,11 @@ public final class SwipingCardsManager: NSObject {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         pageControl.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
+        if self.pageIndicatorPosition == .top {
+            pageControl.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
+        } else {
+            pageControl.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
+        }
         pageControl.heightAnchor.constraint(equalToConstant: 33)
     }
     
@@ -102,10 +109,16 @@ public final class SwipingCardsManager: NSObject {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
         if usePageIndicator {
-            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
+            if self.pageIndicatorPosition == .top {
+                collectionView.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
+                collectionView.topAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
+            } else {
+                collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
+                collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
+            }
         } else {
+            collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
             collectionView.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
         }
         collectionView.layoutIfNeeded()
@@ -227,4 +240,9 @@ extension UIColor {
         let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
         return String(format:"#%06x", rgb)
     }
+}
+
+extension SwipingCardsManagerDelegate {
+    // making this delegate function optional
+    func didChangeCard(index: Int){}
 }
