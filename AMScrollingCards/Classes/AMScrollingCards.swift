@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FlexiblePageControl
 
 public protocol SwipingCardsManagerDelegate: class {
     func getCellForIndexPath(cell: UICollectionViewCell, indexPath: IndexPath) -> UICollectionViewCell
@@ -31,7 +32,7 @@ public final class SwipingCardsManager: NSObject {
     private var numberOfItems: Int = 0
     private var indexOfCellBeforeDragging = 0
     private var lastIndex = 0
-    private var pageControl: UIPageControl!
+    private var pageControl: FlexiblePageControl!
     private var spacing: CGFloat!
     weak var delegate: SwipingCardsManagerDelegate?
     private var identifier: String!
@@ -69,7 +70,7 @@ public final class SwipingCardsManager: NSObject {
     }
     
     private func setupPageControl(frame: CGRect) {
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: frame.width, height: 33))
+        pageControl = FlexiblePageControl(frame: CGRect(x: 0, y: 0, width: frame.width, height: 33))
         pageControl.numberOfPages = numberOfItems
         pageControl.isUserInteractionEnabled = false
         pageControl.pageIndicatorTintColor = pageDotColor
@@ -203,7 +204,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
         let currentIndex = indexOfMajorCell()
         if currentIndex != lastIndex {
             lastIndex = currentIndex
-            pageControl.currentPage = indexOfMajorCell()
+            pageControl.setCurrentPage(at: indexOfMajorCell(), animated: true)
             delegate?.didChangeCard(index: indexOfMajorCell())
         }
     }

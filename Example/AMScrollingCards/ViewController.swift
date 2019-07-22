@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         data.append(CardData(color: UIColor.red, title: "Card 1"))
         data.append(CardData(color: UIColor.yellow, title: "Card 2"))
         data.append(CardData(color: UIColor.green, title: "Card 3"))
+        data.append(CardData(color: UIColor.red, title: "Card 1"))
+        data.append(CardData(color: UIColor.yellow, title: "Card 2"))
+        data.append(CardData(color: UIColor.green, title: "Card 3"))
+        data.append(CardData(color: UIColor.red, title: "Card 1"))
+        data.append(CardData(color: UIColor.yellow, title: "Card 2"))
+        data.append(CardData(color: UIColor.green, title: "Card 3"))
         
     }
     

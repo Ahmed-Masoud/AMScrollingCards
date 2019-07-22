@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMScrollingCards'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'This pod was created to offer a ui component of swiping horizontal cards'
   s.swift_version    = '5'
 
@@ -31,7 +31,7 @@ This pod was created to offer a ui component of swiping horizontal cards with a 
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'AMScrollingCards/Classes/**/*'
-  
+  s.dependency 'FlexiblePageControl'
   # s.resource_bundles = {
   #   'AMScrollingCards' => ['AMScrollingCards/Assets/*.png']
   # }

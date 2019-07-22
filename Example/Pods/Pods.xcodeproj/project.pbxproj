@@ -7,116 +7,169 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		027469F9792702A0A3A4572D162E5283 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		63BD1619A06940B494E432FF89347DAA /* AMScrollingCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A7EFA0B633839538F76969923154F6 /* AMScrollingCards.swift */; };
-		763D660515DA271B134AD6209B472A42 /* Pods-AMScrollingCards_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A4C8C7F46F67A420060968C483B38 /* Pods-AMScrollingCards_Example-dummy.m */; };
-		824A355A0F03DCE10BC6110F4C397633 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		94AAD7670F76835E0DA1820580B72097 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		9E4F66E322C4ED539CE5AC2ED8A24F65 /* Pods-AMScrollingCards_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEEEAC7DF0C25BA10845D00AD1C29E6 /* Pods-AMScrollingCards_Tests-dummy.m */; };
-		A1713660697710140A9041FD367A68C7 /* Pods-AMScrollingCards_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE3949247D66F6080B9744D8C3C8DE6E /* Pods-AMScrollingCards_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ABD0BEAAF881A1039D302A7B177D1F07 /* AMScrollingCards-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08607910F464CA6C226C14D126FFA868 /* AMScrollingCards-dummy.m */; };
-		ECAB01B52AF1DC6D3D40445949E232AC /* Pods-AMScrollingCards_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A2CEF8932EF820B1658B6758C28C1A /* Pods-AMScrollingCards_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBB41AC79C9208FC44182DDF818A7FB9 /* AMScrollingCards-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F82E60041C0FC8EA3ED539FEA0DFA3 /* AMScrollingCards-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10D0B2993F486F13973F6CFB954CA81D /* FlexiblePageControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57A2926A04D5FDDDF38CFD783F8E569 /* FlexiblePageControl.framework */; };
+		146303A47198B286DDDD94641E8702C9 /* AMScrollingCards-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E88B3017E5BE030240DF2693EBA484 /* AMScrollingCards-dummy.m */; };
+		2B71D9CCC6A36B997678F1991B0F2DF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A825147D36C06F6F5680FAA46F1E8F8 /* Foundation.framework */; };
+		331EF44C1E7ABA9BDD3046753AC21C89 /* AMScrollingCards-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D97510653147D50D69977E2DCA62B9F2 /* AMScrollingCards-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48F7705316BFA06677AD734F94124208 /* FlexiblePageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C0F7DE443EFAF042627E32DF4959F6C /* FlexiblePageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57AD155F121C19DA76F19E2BB84A1A5D /* Pods-AMScrollingCards_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1E181612CC7A4655CC043B575D28E5F /* Pods-AMScrollingCards_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A87D958B02609E8F79D9D1FBF465A80 /* Pods-AMScrollingCards_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99455505C0D688BD879D458BBDDFF6C1 /* Pods-AMScrollingCards_Tests-dummy.m */; };
+		8CD604B05E35A239B39E0B36E6C7A7AA /* Pods-AMScrollingCards_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A25890B4B82A3A104FE9D3B64F9190 /* Pods-AMScrollingCards_Example-dummy.m */; };
+		9E1E163024B8D551897184FD9EF0AAC7 /* Pods-AMScrollingCards_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E23124097FB1E2DF61D4F96A51AFBEB /* Pods-AMScrollingCards_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABDE5317462B148E23414E47DE129667 /* FlexiblePageControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2796AB4E9B7C4A722CE82E7A870857 /* FlexiblePageControl-dummy.m */; };
+		C22B46F52AAA10789010FF33E6A01A3C /* FlexiblePageControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE1991CC11B8F893D945DD3CE436CD4 /* FlexiblePageControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C78BFB1DD0C2308B10142FB806E9405B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A825147D36C06F6F5680FAA46F1E8F8 /* Foundation.framework */; };
+		C81BBE3C018A6BEC617E0414F58550B5 /* AMScrollingCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B2FE1E13B049F8B5DD94BDEE57529 /* AMScrollingCards.swift */; };
+		D7BEFA5759294EDC611D32668D803B2D /* FlexiblePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4278FC7864927AE3C0AB95149C415D /* FlexiblePageControl.swift */; };
+		E8DDDB12D4896DF164BAEB4229F155AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A825147D36C06F6F5680FAA46F1E8F8 /* Foundation.framework */; };
+		EE890FE8F51107A0D18BDBDA08B7E83A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A825147D36C06F6F5680FAA46F1E8F8 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2813FB0AFBC1D22FDA5260D2DDCCFFAD /* PBXContainerItemProxy */ = {
+		0B127B9A8D452D2C5AA99E6C98B2566E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 70A2712083F5385D020C91EA0F5A773E;
+			remoteGlobalIDString = 6AA6F4B4ED0FBC2B27AC98004921A4C4;
 			remoteInfo = AMScrollingCards;
 		};
-		8E1213E7CEB10BBEEAABFFD57EDD4B1E /* PBXContainerItemProxy */ = {
+		4121B54FEBBDBC7B2CC90CF12D9A7B0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5ADD9B991F5495DD9A1CF860CBF11F11;
+			remoteGlobalIDString = 98E6C887CCDD28CB99DA1174018E7BE7;
 			remoteInfo = "Pods-AMScrollingCards_Example";
+		};
+		4F3A64627C8D65A8DDF62917E2814D7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8405800C6CFF13EEFA4D1650B2F78024;
+			remoteInfo = FlexiblePageControl;
+		};
+		95206862FDDD5C5B5053CBD4D239D3BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8405800C6CFF13EEFA4D1650B2F78024;
+			remoteInfo = FlexiblePageControl;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08607910F464CA6C226C14D126FFA868 /* AMScrollingCards-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMScrollingCards-dummy.m"; sourceTree = "<group>"; };
-		09F82E60041C0FC8EA3ED539FEA0DFA3 /* AMScrollingCards-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingCards-umbrella.h"; sourceTree = "<group>"; };
-		121413EF18C14C44ED0F3A4F39BF4BCD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		140D1E417ABFDF3807E07EAF96FF59F0 /* Pods-AMScrollingCards_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Example.release.xcconfig"; sourceTree = "<group>"; };
-		17E2AA0BBBBA96CCAABDAC1A6583F489 /* Pods-AMScrollingCards_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AMScrollingCards_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		195C1CA3A2A15675D35210E5A836BF6C /* AMScrollingCards.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMScrollingCards.modulemap; sourceTree = "<group>"; };
-		237A07A88421AE22AF9E7E7FDC549AC6 /* Pods-AMScrollingCards_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMScrollingCards_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		29357A99CA0B9D4131167CF10AE45C29 /* AMScrollingCards-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingCards-prefix.pch"; sourceTree = "<group>"; };
-		43E4EB6F09EF01852E063689005494C8 /* Pods-AMScrollingCards_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AMScrollingCards_Example-resources.sh"; sourceTree = "<group>"; };
-		46A2CEF8932EF820B1658B6758C28C1A /* Pods-AMScrollingCards_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AMScrollingCards_Example-umbrella.h"; sourceTree = "<group>"; };
-		503ED0D43130547D3BA776A1309E3B4A /* Pods-AMScrollingCards_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AMScrollingCards_Tests-resources.sh"; sourceTree = "<group>"; };
-		67DFB4850866DB577F3D085802D56A7C /* Pods-AMScrollingCards_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		688C5CE2C8FFBD8CE8689FEE55319DBC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B88099AB2ED9A1974770F4C81F1222F /* AMScrollingCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AMScrollingCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7874D282708FFC34A04AAA07527B2DBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C0120D03FF90457195887D18C6232A2 /* Pods-AMScrollingCards_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AMScrollingCards_Tests.modulemap"; sourceTree = "<group>"; };
-		833B6C1FE50C85469532BC5812D9A2D7 /* Pods-AMScrollingCards_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AMScrollingCards_Example.modulemap"; sourceTree = "<group>"; };
-		839D2F676699A181387A9FA056AE1FAE /* Pods-AMScrollingCards_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8DEF0E7807549DB064A599BB2F98FDBA /* Pods-AMScrollingCards_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AMScrollingCards_Example-frameworks.sh"; sourceTree = "<group>"; };
-		951505A2CED09AA9F6F693CEC0C1C8D6 /* Pods-AMScrollingCards_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AMScrollingCards_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9FC2B1DCADB57E704C205DCD67E970B8 /* Pods-AMScrollingCards_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AMScrollingCards_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		A2F601CA99802BF3F015DE77F3EC6480 /* Pods-AMScrollingCards_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMScrollingCards_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		A9D077D6D47C04CAD3476D2698DAD51A /* Pods_AMScrollingCards_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMScrollingCards_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE3949247D66F6080B9744D8C3C8DE6E /* Pods-AMScrollingCards_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AMScrollingCards_Tests-umbrella.h"; sourceTree = "<group>"; };
-		BA1286DF9BE55743BA71EAC4B9850DA8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA3A4C8C7F46F67A420060968C483B38 /* Pods-AMScrollingCards_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AMScrollingCards_Example-dummy.m"; sourceTree = "<group>"; };
-		C2D14EE34424750DDB7B5FF4BE5141BB /* AMScrollingCards.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = AMScrollingCards.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D34A4C88D6D8979280AE61F3770CE21F /* AMScrollingCards.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMScrollingCards.xcconfig; sourceTree = "<group>"; };
-		DAAD00EE342572156277565A16EB11B7 /* Pods-AMScrollingCards_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DAEEEAC7DF0C25BA10845D00AD1C29E6 /* Pods-AMScrollingCards_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AMScrollingCards_Tests-dummy.m"; sourceTree = "<group>"; };
-		F2A7EFA0B633839538F76969923154F6 /* AMScrollingCards.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AMScrollingCards.swift; path = AMScrollingCards/Classes/AMScrollingCards.swift; sourceTree = "<group>"; };
-		F7553A50256404A3A03C2A291453F901 /* Pods_AMScrollingCards_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMScrollingCards_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8D58B25DF53CA2B7294E28E671525FF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0272A4CCE4964E6D0FC68FA3B6C84BB2 /* Pods-AMScrollingCards_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AMScrollingCards_Example-frameworks.sh"; sourceTree = "<group>"; };
+		08620E442F1EE475F2896B4068E384F0 /* Pods-AMScrollingCards_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Example.release.xcconfig"; sourceTree = "<group>"; };
+		276504B3B93A4905E14DA5F01C7E2E57 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		2FD2571EB3E072BB78494A541E5AFE60 /* FlexiblePageControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FlexiblePageControl-Info.plist"; sourceTree = "<group>"; };
+		37A540559CFECF7599F7704E62E97341 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3E23124097FB1E2DF61D4F96A51AFBEB /* Pods-AMScrollingCards_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AMScrollingCards_Tests-umbrella.h"; sourceTree = "<group>"; };
+		46102992754DA4A3BE745DB08CCEDD45 /* FlexiblePageControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexiblePageControl-prefix.pch"; sourceTree = "<group>"; };
+		5154F55B96B13B612CB95A85673F12BE /* Pods-AMScrollingCards_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		53D4EC67A37017F29D94AC5E8F3906A0 /* Pods-AMScrollingCards_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5558BB30BF533762DBA418B45A18FB3F /* Pods-AMScrollingCards_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AMScrollingCards_Tests.modulemap"; sourceTree = "<group>"; };
+		57A5AAEFDA5929C60688D967AC1742F0 /* Pods-AMScrollingCards_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMScrollingCards_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		597E1122D6E41A89B885ED2DFB6155B3 /* AMScrollingCards.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMScrollingCards.modulemap; sourceTree = "<group>"; };
+		5A1A6FC8235E0EE94715E28DB50BC490 /* AMScrollingCards-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingCards-prefix.pch"; sourceTree = "<group>"; };
+		5BB047F6F975E3A2DF8C897057EBD03D /* Pods-AMScrollingCards_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMScrollingCards_Tests-Info.plist"; sourceTree = "<group>"; };
+		5BE4F3EE287CFEB807EE501238FEA027 /* AMScrollingCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AMScrollingCards.framework; path = AMScrollingCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0F7DE443EFAF042627E32DF4959F6C /* FlexiblePageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexiblePageControl.h; path = FlexiblePageControl/FlexiblePageControl.h; sourceTree = "<group>"; };
+		6A825147D36C06F6F5680FAA46F1E8F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6D2A5A8C2F94255FF2C64B3ACAAC2803 /* Pods-AMScrollingCards_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMScrollingCards_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		7DE1991CC11B8F893D945DD3CE436CD4 /* FlexiblePageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexiblePageControl-umbrella.h"; sourceTree = "<group>"; };
+		7E4278FC7864927AE3C0AB95149C415D /* FlexiblePageControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexiblePageControl.swift; path = FlexiblePageControl/FlexiblePageControl.swift; sourceTree = "<group>"; };
+		84BD4EB1AA8ACFF33BD64B7F3BD15B90 /* Pods-AMScrollingCards_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMScrollingCards_Example-Info.plist"; sourceTree = "<group>"; };
+		8DC2D9C4E4C2E0A00A7E229D4346F70E /* AMScrollingCards.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMScrollingCards.xcconfig; sourceTree = "<group>"; };
+		99455505C0D688BD879D458BBDDFF6C1 /* Pods-AMScrollingCards_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AMScrollingCards_Tests-dummy.m"; sourceTree = "<group>"; };
+		9B3E7CA6C25160EA6D83A9BB69499BD5 /* FlexiblePageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexiblePageControl.framework; path = FlexiblePageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3984C67C723E900DBDC271AED22E43F /* Pods-AMScrollingCards_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AMScrollingCards_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AC355307768AED559950BD0CD4E7172A /* Pods_AMScrollingCards_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AMScrollingCards_Tests.framework; path = "Pods-AMScrollingCards_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD2842CA96F23018A5849A92F6C697DB /* Pods_AMScrollingCards_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AMScrollingCards_Example.framework; path = "Pods-AMScrollingCards_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6BB1894AB1F876241380136EB63643C /* FlexiblePageControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlexiblePageControl.xcconfig; sourceTree = "<group>"; };
+		BA2B2FE1E13B049F8B5DD94BDEE57529 /* AMScrollingCards.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AMScrollingCards.swift; path = AMScrollingCards/Classes/AMScrollingCards.swift; sourceTree = "<group>"; };
+		C57A2926A04D5FDDDF38CFD783F8E569 /* FlexiblePageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlexiblePageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACF1CC1BA9F54C0D11E9B9DBA98C393 /* Pods-AMScrollingCards_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AMScrollingCards_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D1E181612CC7A4655CC043B575D28E5F /* Pods-AMScrollingCards_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AMScrollingCards_Example-umbrella.h"; sourceTree = "<group>"; };
+		D4E88B3017E5BE030240DF2693EBA484 /* AMScrollingCards-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMScrollingCards-dummy.m"; sourceTree = "<group>"; };
+		D52104BF2FD95D33EBD3535BB65FE2F6 /* AMScrollingCards.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AMScrollingCards.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D8AADE7CE717AF67E2A4E55494F6AA70 /* Pods-AMScrollingCards_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AMScrollingCards_Example.modulemap"; sourceTree = "<group>"; };
+		D97510653147D50D69977E2DCA62B9F2 /* AMScrollingCards-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingCards-umbrella.h"; sourceTree = "<group>"; };
+		E1A0B1C3DABD803ED25F4A29D7DBAF37 /* Pods-AMScrollingCards_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AMScrollingCards_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E3A25890B4B82A3A104FE9D3B64F9190 /* Pods-AMScrollingCards_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AMScrollingCards_Example-dummy.m"; sourceTree = "<group>"; };
+		E6C7096D747E1D75D1656EC6EA95F4DB /* AMScrollingCards-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AMScrollingCards-Info.plist"; sourceTree = "<group>"; };
+		EEA5600D599A5BA8FA76D7BA493ABFA3 /* FlexiblePageControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FlexiblePageControl.modulemap; sourceTree = "<group>"; };
+		FA2796AB4E9B7C4A722CE82E7A870857 /* FlexiblePageControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlexiblePageControl-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		118092EE18BD2A37C4D5EF0C39038019 /* Frameworks */ = {
+		1BE108C2B63D772C5F634A66E196ECB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				824A355A0F03DCE10BC6110F4C397633 /* Foundation.framework in Frameworks */,
+				E8DDDB12D4896DF164BAEB4229F155AB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50D1978223D036762404131D9CBC0D76 /* Frameworks */ = {
+		98BD9D80633FC747B1895632FED4FFA3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AAD7670F76835E0DA1820580B72097 /* Foundation.framework in Frameworks */,
+				2B71D9CCC6A36B997678F1991B0F2DF6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		513DFB07E3B97C34E33BD6D1871A52E7 /* Frameworks */ = {
+		AE5EEB2D8CE62C65C51EA0CC9EAEEF1D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027469F9792702A0A3A4572D162E5283 /* Foundation.framework in Frameworks */,
+				10D0B2993F486F13973F6CFB954CA81D /* FlexiblePageControl.framework in Frameworks */,
+				C78BFB1DD0C2308B10142FB806E9405B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9A5DA4EAC317D45F39AB1A1F165F69E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE890FE8F51107A0D18BDBDA08B7E83A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		221FD64EF4652FA67AD5FEE69A34EC59 /* Targets Support Files */ = {
+		05AFE4F29C99FD38342AD42F713B8F5F /* Pods-AMScrollingCards_Example */ = {
 			isa = PBXGroup;
 			children = (
-				279E040D607689B9F1E36F488C5BF7E6 /* Pods-AMScrollingCards_Example */,
-				CE681D7F2162D1B23E685BE394E9138B /* Pods-AMScrollingCards_Tests */,
+				D8AADE7CE717AF67E2A4E55494F6AA70 /* Pods-AMScrollingCards_Example.modulemap */,
+				E1A0B1C3DABD803ED25F4A29D7DBAF37 /* Pods-AMScrollingCards_Example-acknowledgements.markdown */,
+				6D2A5A8C2F94255FF2C64B3ACAAC2803 /* Pods-AMScrollingCards_Example-acknowledgements.plist */,
+				E3A25890B4B82A3A104FE9D3B64F9190 /* Pods-AMScrollingCards_Example-dummy.m */,
+				0272A4CCE4964E6D0FC68FA3B6C84BB2 /* Pods-AMScrollingCards_Example-frameworks.sh */,
+				84BD4EB1AA8ACFF33BD64B7F3BD15B90 /* Pods-AMScrollingCards_Example-Info.plist */,
+				D1E181612CC7A4655CC043B575D28E5F /* Pods-AMScrollingCards_Example-umbrella.h */,
+				53D4EC67A37017F29D94AC5E8F3906A0 /* Pods-AMScrollingCards_Example.debug.xcconfig */,
+				08620E442F1EE475F2896B4068E384F0 /* Pods-AMScrollingCards_Example.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-AMScrollingCards_Example";
+			path = "Target Support Files/Pods-AMScrollingCards_Example";
 			sourceTree = "<group>";
 		};
-		2389C4CA0EC49BCEFB20E5EC30C41C5D /* Pod */ = {
+		1BE68F83947391B6EE7B4348BCB88D85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2D14EE34424750DDB7B5FF4BE5141BB /* AMScrollingCards.podspec */,
-				121413EF18C14C44ED0F3A4F39BF4BCD /* LICENSE */,
-				F8D58B25DF53CA2B7294E28E671525FF /* README.md */,
+				C57A2926A04D5FDDDF38CFD783F8E569 /* FlexiblePageControl.framework */,
+				C2829D93CB777185CB4310092633DF97 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E544B0F10595A56E41850DD0B61B344 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D52104BF2FD95D33EBD3535BB65FE2F6 /* AMScrollingCards.podspec */,
+				37A540559CFECF7599F7704E62E97341 /* LICENSE */,
+				276504B3B93A4905E14DA5F01C7E2E57 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -124,193 +177,238 @@
 		279638CA6CB504B6C84145EB75449C67 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B47E542E8F9AD47F050D476916C4F27A /* AMScrollingCards */,
+				C653292CC7413167878B8A6DD7FA54E3 /* AMScrollingCards */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		279E040D607689B9F1E36F488C5BF7E6 /* Pods-AMScrollingCards_Example */ = {
+		44B0EA700AB4E61D682F1BC496AEAF42 /* FlexiblePageControl */ = {
 			isa = PBXGroup;
 			children = (
-				688C5CE2C8FFBD8CE8689FEE55319DBC /* Info.plist */,
-				833B6C1FE50C85469532BC5812D9A2D7 /* Pods-AMScrollingCards_Example.modulemap */,
-				17E2AA0BBBBA96CCAABDAC1A6583F489 /* Pods-AMScrollingCards_Example-acknowledgements.markdown */,
-				A2F601CA99802BF3F015DE77F3EC6480 /* Pods-AMScrollingCards_Example-acknowledgements.plist */,
-				BA3A4C8C7F46F67A420060968C483B38 /* Pods-AMScrollingCards_Example-dummy.m */,
-				8DEF0E7807549DB064A599BB2F98FDBA /* Pods-AMScrollingCards_Example-frameworks.sh */,
-				43E4EB6F09EF01852E063689005494C8 /* Pods-AMScrollingCards_Example-resources.sh */,
-				46A2CEF8932EF820B1658B6758C28C1A /* Pods-AMScrollingCards_Example-umbrella.h */,
-				DAAD00EE342572156277565A16EB11B7 /* Pods-AMScrollingCards_Example.debug.xcconfig */,
-				140D1E417ABFDF3807E07EAF96FF59F0 /* Pods-AMScrollingCards_Example.release.xcconfig */,
+				5C0F7DE443EFAF042627E32DF4959F6C /* FlexiblePageControl.h */,
+				7E4278FC7864927AE3C0AB95149C415D /* FlexiblePageControl.swift */,
+				556B22E45D9FE524EC60689803EC9FC6 /* Support Files */,
 			);
-			name = "Pods-AMScrollingCards_Example";
-			path = "Target Support Files/Pods-AMScrollingCards_Example";
+			name = FlexiblePageControl;
+			path = FlexiblePageControl;
 			sourceTree = "<group>";
 		};
-		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+		556B22E45D9FE524EC60689803EC9FC6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+				EEA5600D599A5BA8FA76D7BA493ABFA3 /* FlexiblePageControl.modulemap */,
+				B6BB1894AB1F876241380136EB63643C /* FlexiblePageControl.xcconfig */,
+				FA2796AB4E9B7C4A722CE82E7A870857 /* FlexiblePageControl-dummy.m */,
+				2FD2571EB3E072BB78494A541E5AFE60 /* FlexiblePageControl-Info.plist */,
+				46102992754DA4A3BE745DB08CCEDD45 /* FlexiblePageControl-prefix.pch */,
+				7DE1991CC11B8F893D945DD3CE436CD4 /* FlexiblePageControl-umbrella.h */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/FlexiblePageControl";
 			sourceTree = "<group>";
 		};
-		B47E542E8F9AD47F050D476916C4F27A /* AMScrollingCards */ = {
+		59218556140A77A11C4B5CAC66267859 /* Pods-AMScrollingCards_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F2A7EFA0B633839538F76969923154F6 /* AMScrollingCards.swift */,
-				2389C4CA0EC49BCEFB20E5EC30C41C5D /* Pod */,
-				E7D2AE2097131AF3EF238EE83ABE7CBE /* Support Files */,
-			);
-			name = AMScrollingCards;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		CE681D7F2162D1B23E685BE394E9138B /* Pods-AMScrollingCards_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				7874D282708FFC34A04AAA07527B2DBD /* Info.plist */,
-				7C0120D03FF90457195887D18C6232A2 /* Pods-AMScrollingCards_Tests.modulemap */,
-				951505A2CED09AA9F6F693CEC0C1C8D6 /* Pods-AMScrollingCards_Tests-acknowledgements.markdown */,
-				237A07A88421AE22AF9E7E7FDC549AC6 /* Pods-AMScrollingCards_Tests-acknowledgements.plist */,
-				DAEEEAC7DF0C25BA10845D00AD1C29E6 /* Pods-AMScrollingCards_Tests-dummy.m */,
-				9FC2B1DCADB57E704C205DCD67E970B8 /* Pods-AMScrollingCards_Tests-frameworks.sh */,
-				503ED0D43130547D3BA776A1309E3B4A /* Pods-AMScrollingCards_Tests-resources.sh */,
-				AE3949247D66F6080B9744D8C3C8DE6E /* Pods-AMScrollingCards_Tests-umbrella.h */,
-				839D2F676699A181387A9FA056AE1FAE /* Pods-AMScrollingCards_Tests.debug.xcconfig */,
-				67DFB4850866DB577F3D085802D56A7C /* Pods-AMScrollingCards_Tests.release.xcconfig */,
+				5558BB30BF533762DBA418B45A18FB3F /* Pods-AMScrollingCards_Tests.modulemap */,
+				A3984C67C723E900DBDC271AED22E43F /* Pods-AMScrollingCards_Tests-acknowledgements.markdown */,
+				57A5AAEFDA5929C60688D967AC1742F0 /* Pods-AMScrollingCards_Tests-acknowledgements.plist */,
+				99455505C0D688BD879D458BBDDFF6C1 /* Pods-AMScrollingCards_Tests-dummy.m */,
+				5BB047F6F975E3A2DF8C897057EBD03D /* Pods-AMScrollingCards_Tests-Info.plist */,
+				3E23124097FB1E2DF61D4F96A51AFBEB /* Pods-AMScrollingCards_Tests-umbrella.h */,
+				5154F55B96B13B612CB95A85673F12BE /* Pods-AMScrollingCards_Tests.debug.xcconfig */,
+				CACF1CC1BA9F54C0D11E9B9DBA98C393 /* Pods-AMScrollingCards_Tests.release.xcconfig */,
 			);
 			name = "Pods-AMScrollingCards_Tests";
 			path = "Target Support Files/Pods-AMScrollingCards_Tests";
 			sourceTree = "<group>";
 		};
-		CF1408CF629C7361332E53B88F7BD30C = {
+		6D14FC84DB846DE9D5E9997230A862C1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				24390EFD555DD124430DFF9724065945 /* Podfile */,
-				279638CA6CB504B6C84145EB75449C67 /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				D827B4A246C30D878F9D37245B6A4367 /* Products */,
-				221FD64EF4652FA67AD5FEE69A34EC59 /* Targets Support Files */,
+				05AFE4F29C99FD38342AD42F713B8F5F /* Pods-AMScrollingCards_Example */,
+				59218556140A77A11C4B5CAC66267859 /* Pods-AMScrollingCards_Tests */,
 			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		A873BD601C2E1978057B4CEFFA02DE51 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D827B4A246C30D878F9D37245B6A4367 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6B88099AB2ED9A1974770F4C81F1222F /* AMScrollingCards.framework */,
-				A9D077D6D47C04CAD3476D2698DAD51A /* Pods_AMScrollingCards_Example.framework */,
-				F7553A50256404A3A03C2A291453F901 /* Pods_AMScrollingCards_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E7D2AE2097131AF3EF238EE83ABE7CBE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				195C1CA3A2A15675D35210E5A836BF6C /* AMScrollingCards.modulemap */,
-				D34A4C88D6D8979280AE61F3770CE21F /* AMScrollingCards.xcconfig */,
-				08607910F464CA6C226C14D126FFA868 /* AMScrollingCards-dummy.m */,
-				29357A99CA0B9D4131167CF10AE45C29 /* AMScrollingCards-prefix.pch */,
-				09F82E60041C0FC8EA3ED539FEA0DFA3 /* AMScrollingCards-umbrella.h */,
-				BA1286DF9BE55743BA71EAC4B9850DA8 /* Info.plist */,
+				597E1122D6E41A89B885ED2DFB6155B3 /* AMScrollingCards.modulemap */,
+				8DC2D9C4E4C2E0A00A7E229D4346F70E /* AMScrollingCards.xcconfig */,
+				D4E88B3017E5BE030240DF2693EBA484 /* AMScrollingCards-dummy.m */,
+				E6C7096D747E1D75D1656EC6EA95F4DB /* AMScrollingCards-Info.plist */,
+				5A1A6FC8235E0EE94715E28DB50BC490 /* AMScrollingCards-prefix.pch */,
+				D97510653147D50D69977E2DCA62B9F2 /* AMScrollingCards-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/AMScrollingCards";
 			sourceTree = "<group>";
 		};
+		C2829D93CB777185CB4310092633DF97 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6A825147D36C06F6F5680FAA46F1E8F8 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C653292CC7413167878B8A6DD7FA54E3 /* AMScrollingCards */ = {
+			isa = PBXGroup;
+			children = (
+				BA2B2FE1E13B049F8B5DD94BDEE57529 /* AMScrollingCards.swift */,
+				1E544B0F10595A56E41850DD0B61B344 /* Pod */,
+				A873BD601C2E1978057B4CEFFA02DE51 /* Support Files */,
+			);
+			name = AMScrollingCards;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				279638CA6CB504B6C84145EB75449C67 /* Development Pods */,
+				1BE68F83947391B6EE7B4348BCB88D85 /* Frameworks */,
+				FC33D2F0BFDDEAE43FA51122C44DACB1 /* Pods */,
+				DC34C0F6EF49000B60EF26CE724A8214 /* Products */,
+				6D14FC84DB846DE9D5E9997230A862C1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DC34C0F6EF49000B60EF26CE724A8214 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BE4F3EE287CFEB807EE501238FEA027 /* AMScrollingCards.framework */,
+				9B3E7CA6C25160EA6D83A9BB69499BD5 /* FlexiblePageControl.framework */,
+				AD2842CA96F23018A5849A92F6C697DB /* Pods_AMScrollingCards_Example.framework */,
+				AC355307768AED559950BD0CD4E7172A /* Pods_AMScrollingCards_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC33D2F0BFDDEAE43FA51122C44DACB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44B0EA700AB4E61D682F1BC496AEAF42 /* FlexiblePageControl */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		69712D6EAC502E44FB1156E9F839940B /* Headers */ = {
+		1D84A00407C29EE1292F6A4CF1163A81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB41AC79C9208FC44182DDF818A7FB9 /* AMScrollingCards-umbrella.h in Headers */,
+				C22B46F52AAA10789010FF33E6A01A3C /* FlexiblePageControl-umbrella.h in Headers */,
+				48F7705316BFA06677AD734F94124208 /* FlexiblePageControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C516C489307414B82AE8ED48A7E10A3F /* Headers */ = {
+		577AB3AB1A61545334AF568AA6B81EEC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECAB01B52AF1DC6D3D40445949E232AC /* Pods-AMScrollingCards_Example-umbrella.h in Headers */,
+				331EF44C1E7ABA9BDD3046753AC21C89 /* AMScrollingCards-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6740786BE4966E69A8D3E70EBD452EC /* Headers */ = {
+		96EFE8287E9DC460A5340C777BBCA35D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1713660697710140A9041FD367A68C7 /* Pods-AMScrollingCards_Tests-umbrella.h in Headers */,
+				57AD155F121C19DA76F19E2BB84A1A5D /* Pods-AMScrollingCards_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F52ED750D33D540BB390C519F314D7A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E1E163024B8D551897184FD9EF0AAC7 /* Pods-AMScrollingCards_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5ADD9B991F5495DD9A1CF860CBF11F11 /* Pods-AMScrollingCards_Example */ = {
+		6AA6F4B4ED0FBC2B27AC98004921A4C4 /* AMScrollingCards */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8AAB60C51FC2DF9A82AEEECA55D6F4B6 /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Example" */;
+			buildConfigurationList = 6E2D5531927BE409680FF04BBFBC8161 /* Build configuration list for PBXNativeTarget "AMScrollingCards" */;
 			buildPhases = (
-				C516C489307414B82AE8ED48A7E10A3F /* Headers */,
-				8F6EEFC5CDDC70466B5961288E342436 /* Sources */,
-				50D1978223D036762404131D9CBC0D76 /* Frameworks */,
-				AFC219DA3DE28A4805CA7BA1A70E71BD /* Resources */,
+				577AB3AB1A61545334AF568AA6B81EEC /* Headers */,
+				F313B8FE026EF0B9C261737B504D21C6 /* Sources */,
+				AE5EEB2D8CE62C65C51EA0CC9EAEEF1D /* Frameworks */,
+				263C0D3AAA3EDB3643F3736082495F8F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3FA0E689AA44977690B37E9E8B248177 /* PBXTargetDependency */,
-			);
-			name = "Pods-AMScrollingCards_Example";
-			productName = "Pods-AMScrollingCards_Example";
-			productReference = A9D077D6D47C04CAD3476D2698DAD51A /* Pods_AMScrollingCards_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		70A2712083F5385D020C91EA0F5A773E /* AMScrollingCards */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4FB7CBC899AE70D9825438896E3302D3 /* Build configuration list for PBXNativeTarget "AMScrollingCards" */;
-			buildPhases = (
-				69712D6EAC502E44FB1156E9F839940B /* Headers */,
-				E2B5F9026603B46196212A4C5B5D79B7 /* Sources */,
-				118092EE18BD2A37C4D5EF0C39038019 /* Frameworks */,
-				64F63C50A8B0B3584BA7CB7E76EE8878 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+				5D5B3CA1C9985D1CF4E0BE0DDF0A18FA /* PBXTargetDependency */,
 			);
 			name = AMScrollingCards;
 			productName = AMScrollingCards;
-			productReference = 6B88099AB2ED9A1974770F4C81F1222F /* AMScrollingCards.framework */;
+			productReference = 5BE4F3EE287CFEB807EE501238FEA027 /* AMScrollingCards.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		79A02AFE696E3E180BBFF281F45DD3FF /* Pods-AMScrollingCards_Tests */ = {
+		8405800C6CFF13EEFA4D1650B2F78024 /* FlexiblePageControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CCB4BA78CF84B807260116DFE2C3A48E /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Tests" */;
+			buildConfigurationList = 90BE4472EFB05B89FDA5610217FA845F /* Build configuration list for PBXNativeTarget "FlexiblePageControl" */;
 			buildPhases = (
-				D6740786BE4966E69A8D3E70EBD452EC /* Headers */,
-				5FAD117023F683D3698EE08261372D57 /* Sources */,
-				513DFB07E3B97C34E33BD6D1871A52E7 /* Frameworks */,
-				21F909A99B80578584DF59EFB78AD27B /* Resources */,
+				1D84A00407C29EE1292F6A4CF1163A81 /* Headers */,
+				3259A1A990D1A0CC532863BA243C8B39 /* Sources */,
+				B9A5DA4EAC317D45F39AB1A1F165F69E /* Frameworks */,
+				EF7F2D506E64ACEB12E7F937F9BBC4A0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B09FF7DC4693F15168A3582461F93BE0 /* PBXTargetDependency */,
+			);
+			name = FlexiblePageControl;
+			productName = FlexiblePageControl;
+			productReference = 9B3E7CA6C25160EA6D83A9BB69499BD5 /* FlexiblePageControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		98E6C887CCDD28CB99DA1174018E7BE7 /* Pods-AMScrollingCards_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97A07CD3085716E142BB1A5350053D98 /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Example" */;
+			buildPhases = (
+				96EFE8287E9DC460A5340C777BBCA35D /* Headers */,
+				2B4B1018ABFA86FB677E43739C44A9D0 /* Sources */,
+				1BE108C2B63D772C5F634A66E196ECB0 /* Frameworks */,
+				C3FD011A0BC34C76FC71DAC52549D98D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A638B66D48149C19CF6F9385A1732421 /* PBXTargetDependency */,
+				42E7879DDAE9DE7818B071F3668A8972 /* PBXTargetDependency */,
+			);
+			name = "Pods-AMScrollingCards_Example";
+			productName = "Pods-AMScrollingCards_Example";
+			productReference = AD2842CA96F23018A5849A92F6C697DB /* Pods_AMScrollingCards_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A54AEA47D03A916C0CA355A182EC2AC3 /* Pods-AMScrollingCards_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B19FB3FE70156288ABED53A72F9ED00 /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Tests" */;
+			buildPhases = (
+				F52ED750D33D540BB390C519F314D7A9 /* Headers */,
+				B694A1DE002581D691BF13EC6E090C39 /* Sources */,
+				98BD9D80633FC747B1895632FED4FFA3 /* Frameworks */,
+				C6B1AFCE743DDCAD2D961870591791E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8509B5275BDF88A47065F85091EE4E8 /* PBXTargetDependency */,
 			);
 			name = "Pods-AMScrollingCards_Tests";
 			productName = "Pods-AMScrollingCards_Tests";
-			productReference = F7553A50256404A3A03C2A291453F901 /* Pods_AMScrollingCards_Tests.framework */;
+			productReference = AC355307768AED559950BD0CD4E7172A /* Pods_AMScrollingCards_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -319,50 +417,52 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					70A2712083F5385D020C91EA0F5A773E = {
-						LastSwiftMigration = 1020;
-					};
-				};
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = D827B4A246C30D878F9D37245B6A4367 /* Products */;
+			productRefGroup = DC34C0F6EF49000B60EF26CE724A8214 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70A2712083F5385D020C91EA0F5A773E /* AMScrollingCards */,
-				5ADD9B991F5495DD9A1CF860CBF11F11 /* Pods-AMScrollingCards_Example */,
-				79A02AFE696E3E180BBFF281F45DD3FF /* Pods-AMScrollingCards_Tests */,
+				6AA6F4B4ED0FBC2B27AC98004921A4C4 /* AMScrollingCards */,
+				8405800C6CFF13EEFA4D1650B2F78024 /* FlexiblePageControl */,
+				98E6C887CCDD28CB99DA1174018E7BE7 /* Pods-AMScrollingCards_Example */,
+				A54AEA47D03A916C0CA355A182EC2AC3 /* Pods-AMScrollingCards_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		21F909A99B80578584DF59EFB78AD27B /* Resources */ = {
+		263C0D3AAA3EDB3643F3736082495F8F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64F63C50A8B0B3584BA7CB7E76EE8878 /* Resources */ = {
+		C3FD011A0BC34C76FC71DAC52549D98D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFC219DA3DE28A4805CA7BA1A70E71BD /* Resources */ = {
+		C6B1AFCE743DDCAD2D961870591791E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7F2D506E64ACEB12E7F937F9BBC4A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,182 +472,71 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5FAD117023F683D3698EE08261372D57 /* Sources */ = {
+		2B4B1018ABFA86FB677E43739C44A9D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E4F66E322C4ED539CE5AC2ED8A24F65 /* Pods-AMScrollingCards_Tests-dummy.m in Sources */,
+				8CD604B05E35A239B39E0B36E6C7A7AA /* Pods-AMScrollingCards_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F6EEFC5CDDC70466B5961288E342436 /* Sources */ = {
+		3259A1A990D1A0CC532863BA243C8B39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				763D660515DA271B134AD6209B472A42 /* Pods-AMScrollingCards_Example-dummy.m in Sources */,
+				ABDE5317462B148E23414E47DE129667 /* FlexiblePageControl-dummy.m in Sources */,
+				D7BEFA5759294EDC611D32668D803B2D /* FlexiblePageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2B5F9026603B46196212A4C5B5D79B7 /* Sources */ = {
+		B694A1DE002581D691BF13EC6E090C39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD0BEAAF881A1039D302A7B177D1F07 /* AMScrollingCards-dummy.m in Sources */,
-				63BD1619A06940B494E432FF89347DAA /* AMScrollingCards.swift in Sources */,
+				5A87D958B02609E8F79D9D1FBF465A80 /* Pods-AMScrollingCards_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F313B8FE026EF0B9C261737B504D21C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				146303A47198B286DDDD94641E8702C9 /* AMScrollingCards-dummy.m in Sources */,
+				C81BBE3C018A6BEC617E0414F58550B5 /* AMScrollingCards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3FA0E689AA44977690B37E9E8B248177 /* PBXTargetDependency */ = {
+		42E7879DDAE9DE7818B071F3668A8972 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlexiblePageControl;
+			target = 8405800C6CFF13EEFA4D1650B2F78024 /* FlexiblePageControl */;
+			targetProxy = 4F3A64627C8D65A8DDF62917E2814D7C /* PBXContainerItemProxy */;
+		};
+		5D5B3CA1C9985D1CF4E0BE0DDF0A18FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlexiblePageControl;
+			target = 8405800C6CFF13EEFA4D1650B2F78024 /* FlexiblePageControl */;
+			targetProxy = 95206862FDDD5C5B5053CBD4D239D3BA /* PBXContainerItemProxy */;
+		};
+		A638B66D48149C19CF6F9385A1732421 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AMScrollingCards;
-			target = 70A2712083F5385D020C91EA0F5A773E /* AMScrollingCards */;
-			targetProxy = 2813FB0AFBC1D22FDA5260D2DDCCFFAD /* PBXContainerItemProxy */;
+			target = 6AA6F4B4ED0FBC2B27AC98004921A4C4 /* AMScrollingCards */;
+			targetProxy = 0B127B9A8D452D2C5AA99E6C98B2566E /* PBXContainerItemProxy */;
 		};
-		B09FF7DC4693F15168A3582461F93BE0 /* PBXTargetDependency */ = {
+		C8509B5275BDF88A47065F85091EE4E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-AMScrollingCards_Example";
-			target = 5ADD9B991F5495DD9A1CF860CBF11F11 /* Pods-AMScrollingCards_Example */;
-			targetProxy = 8E1213E7CEB10BBEEAABFFD57EDD4B1E /* PBXContainerItemProxy */;
+			target = 98E6C887CCDD28CB99DA1174018E7BE7 /* Pods-AMScrollingCards_Example */;
+			targetProxy = 4121B54FEBBDBC7B2CC90CF12D9A7B0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3CF4F8B083FD30C9D4A04C111E669844 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67DFB4850866DB577F3D085802D56A7C /* Pods-AMScrollingCards_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Pods-AMScrollingCards_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		42422FF267E11FC3600778983A43E2D6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAAD00EE342572156277565A16EB11B7 /* Pods-AMScrollingCards_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		51699311E463CF5DD7D30DC8E0FE4F76 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D34A4C88D6D8979280AE61F3770CE21F /* AMScrollingCards.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingCards/AMScrollingCards-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AMScrollingCards/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AMScrollingCards/AMScrollingCards.modulemap";
-				PRODUCT_MODULE_NAME = AMScrollingCards;
-				PRODUCT_NAME = AMScrollingCards;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6980108E015D1781422DB936B5C37938 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 839D2F676699A181387A9FA056AE1FAE /* Pods-AMScrollingCards_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Pods-AMScrollingCards_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A2D8ABB6E4BC099AA916C6E74DA83921 /* Debug */ = {
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -579,8 +568,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -600,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -608,12 +595,142 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		BF17B80227EE551582927B0FBE01EF40 /* Release */ = {
+		22EAD255ABAD3D6629624FCFADA1AAA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6BB1894AB1F876241380136EB63643C /* FlexiblePageControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FlexiblePageControl/FlexiblePageControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlexiblePageControl/FlexiblePageControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FlexiblePageControl/FlexiblePageControl.modulemap";
+				PRODUCT_MODULE_NAME = FlexiblePageControl;
+				PRODUCT_NAME = FlexiblePageControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		74C7FD05CBFDDF628D7B2C83B919486F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CACF1CC1BA9F54C0D11E9B9DBA98C393 /* Pods-AMScrollingCards_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Pods-AMScrollingCards_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Pods-AMScrollingCards_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		83515AB603F17FFF34E52D871636505B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6BB1894AB1F876241380136EB63643C /* FlexiblePageControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FlexiblePageControl/FlexiblePageControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlexiblePageControl/FlexiblePageControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FlexiblePageControl/FlexiblePageControl.modulemap";
+				PRODUCT_MODULE_NAME = FlexiblePageControl;
+				PRODUCT_NAME = FlexiblePageControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		919F1DFEB43DBDE483BFB569882ADEAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DC2D9C4E4C2E0A00A7E229D4346F70E /* AMScrollingCards.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingCards/AMScrollingCards-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AMScrollingCards/AMScrollingCards-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AMScrollingCards/AMScrollingCards.modulemap";
+				PRODUCT_MODULE_NAME = AMScrollingCards;
+				PRODUCT_NAME = AMScrollingCards;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -645,8 +762,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -663,22 +778,24 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		C146FC4D38D41F650B64E559D5A3344E /* Release */ = {
+		C0A9A2F803CF0ED55BF531A1FDFEAB91 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 140D1E417ABFDF3807E07EAF96FF59F0 /* Pods-AMScrollingCards_Example.release.xcconfig */;
+			baseConfigurationReference = 5154F55B96B13B612CB95A85673F12BE /* Pods-AMScrollingCards_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -688,9 +805,76 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Pods-AMScrollingCards_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Tests/Pods-AMScrollingCards_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C2CD9D77D985F3E6F2BDE44276DBC66B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DC2D9C4E4C2E0A00A7E229D4346F70E /* AMScrollingCards.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingCards/AMScrollingCards-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AMScrollingCards/AMScrollingCards-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AMScrollingCards/AMScrollingCards.modulemap";
+				PRODUCT_MODULE_NAME = AMScrollingCards;
+				PRODUCT_NAME = AMScrollingCards;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C694296D9B985CEEDD63E8530080260B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08620E442F1EE475F2896B4068E384F0 /* Pods-AMScrollingCards_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example.modulemap";
@@ -708,10 +892,12 @@
 			};
 			name = Release;
 		};
-		E5BAAD1DBE153E87DD6D5A9322F18660 /* Debug */ = {
+		E4F0132BCF656CC3299D72386357C59D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D34A4C88D6D8979280AE61F3770CE21F /* AMScrollingCards.xcconfig */;
+			baseConfigurationReference = 53D4EC67A37017F29D94AC5E8F3906A0 /* Pods-AMScrollingCards_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -721,18 +907,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingCards/AMScrollingCards-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AMScrollingCards/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AMScrollingCards/AMScrollingCards.modulemap";
-				PRODUCT_MODULE_NAME = AMScrollingCards;
-				PRODUCT_NAME = AMScrollingCards;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -745,35 +932,44 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2D8ABB6E4BC099AA916C6E74DA83921 /* Debug */,
-				BF17B80227EE551582927B0FBE01EF40 /* Release */,
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FB7CBC899AE70D9825438896E3302D3 /* Build configuration list for PBXNativeTarget "AMScrollingCards" */ = {
+		4B19FB3FE70156288ABED53A72F9ED00 /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5BAAD1DBE153E87DD6D5A9322F18660 /* Debug */,
-				51699311E463CF5DD7D30DC8E0FE4F76 /* Release */,
+				C0A9A2F803CF0ED55BF531A1FDFEAB91 /* Debug */,
+				74C7FD05CBFDDF628D7B2C83B919486F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8AAB60C51FC2DF9A82AEEECA55D6F4B6 /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Example" */ = {
+		6E2D5531927BE409680FF04BBFBC8161 /* Build configuration list for PBXNativeTarget "AMScrollingCards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42422FF267E11FC3600778983A43E2D6 /* Debug */,
-				C146FC4D38D41F650B64E559D5A3344E /* Release */,
+				919F1DFEB43DBDE483BFB569882ADEAC /* Debug */,
+				C2CD9D77D985F3E6F2BDE44276DBC66B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CCB4BA78CF84B807260116DFE2C3A48E /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Tests" */ = {
+		90BE4472EFB05B89FDA5610217FA845F /* Build configuration list for PBXNativeTarget "FlexiblePageControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6980108E015D1781422DB936B5C37938 /* Debug */,
-				3CF4F8B083FD30C9D4A04C111E669844 /* Release */,
+				22EAD255ABAD3D6629624FCFADA1AAA7 /* Debug */,
+				83515AB603F17FFF34E52D871636505B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97A07CD3085716E142BB1A5350053D98 /* Build configuration list for PBXNativeTarget "Pods-AMScrollingCards_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F0132BCF656CC3299D72386357C59D /* Debug */,
+				C694296D9B985CEEDD63E8530080260B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

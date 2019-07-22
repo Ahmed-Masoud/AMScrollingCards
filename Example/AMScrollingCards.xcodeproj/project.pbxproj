@@ -276,21 +276,19 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMScrollingCards/AMScrollingCards.framework",
+				"${BUILT_PRODUCTS_DIR}/FlexiblePageControl/FlexiblePageControl.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMScrollingCards.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexiblePageControl.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AMScrollingCards_Example/Pods-AMScrollingCards_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B66CDC34C9CCF3B7B531217 /* [CP] Check Pods Manifest.lock */ = {

@@ -1,5 +1,4 @@
 import XCTest
-import AMScrollingCards
 
 class Tests: XCTestCase {
     
