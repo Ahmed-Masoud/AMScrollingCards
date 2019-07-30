@@ -155,6 +155,14 @@ public final class SwipingCardsManager: NSObject {
         let safeIndex = max(0, min(numberOfItems - 1, index))
         return safeIndex
     }
+    
+    public func reloadCollection(indexPaths: [IndexPath]) {
+        if indexPaths.isEmpty {
+            collectionView.reloadData()
+        } else {
+            collectionView.reloadItems(at: indexPaths)
+        }
+    }
 }
 
 @available(iOS 9.0, *)
