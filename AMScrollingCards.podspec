@@ -25,7 +25,7 @@ This pod was created to offer a ui component of swiping horizontal cards with a 
   s.homepage         = 'https://github.com/Ahmed-Masoud/AMScrollingCards'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Ahmed-Masoud' => 'ahmed.ehab@rubikal.com' }
+  s.author           = { 'Ahmed-Masoud' => 'ahmedmasoud82@gmail.com' }
   s.source           = { :git => 'https://github.com/Ahmed-Masoud/AMScrollingCards.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.ios.deployment_target = '10.0'
