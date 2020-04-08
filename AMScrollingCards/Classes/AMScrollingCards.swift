@@ -16,13 +16,43 @@ public protocol SwipingCardsManagerDelegate: class {
     func didChangeCard(index: Int)
 }
 
+public struct SwipingCardsConfigurationModel {
+    var containerView: UIView
+    var numberOfItems: Int
+    var identifier: String
+    var delegate: SwipingCardsManagerDelegate
+    var cellNib: UINib
+    var spacing: CGFloat = 10
+    var usePageIndicator: Bool
+    var selectedPageDotColor: UIColor?
+    var pageDotColor: UIColor?
+    var peakSize: CGFloat = 25
+    
+    public init(containerView: UIView,
+         numberOfItems: Int,
+         identifier: String,
+         delegate: SwipingCardsManagerDelegate,
+         cellNib: UINib,
+         spacing: CGFloat = 0,
+         usePageIndicator: Bool = true,
+         selectedPageDotColor: UIColor?,
+         pageDotColor: UIColor?,
+         peakSize: CGFloat = 25) {
+        self.containerView = containerView
+        self.numberOfItems = numberOfItems
+        self.identifier = identifier
+        self.peakSize = peakSize
+        self.spacing = spacing
+        self.delegate = delegate
+        self.cellNib = cellNib
+        self.pageDotColor = pageDotColor
+        self.selectedPageDotColor = selectedPageDotColor
+        self.usePageIndicator = usePageIndicator
+    }
+}
+
 @available(iOS 9.0, *)
 public final class SwipingCardsManager: NSObject {
-    
-    public enum pageIndicatorPosition {
-        case top
-        case bottom
-    }
     
     public var cardsView: UIView!
     private var pageDotColor: UIColor!
@@ -36,41 +66,29 @@ public final class SwipingCardsManager: NSObject {
     private var spacing: CGFloat!
     weak var delegate: SwipingCardsManagerDelegate?
     private var identifier: String!
-    private var useInsetSpacing: Bool!
+    private var peakSize: CGFloat!
     private var usePageIndicator: Bool!
-    private var pageIndicatorPosition: pageIndicatorPosition!
     
-    public init(frame: CGRect,
-                numberOfItems: Int,
-                identifier: String,
-                delegate: SwipingCardsManagerDelegate,
-                cellNib: UINib,
-                spacing: CGFloat = 0,
-                selectedPageDotColor: UIColor,
-                pageDotColor: UIColor,
-                useInsetSpacing: Bool = false,
-                usePageIndicator: Bool = true,
-                pageIndicatorPosition: pageIndicatorPosition = .top) {
+    public init(config: SwipingCardsConfigurationModel) {
         super.init()
-        self.useInsetSpacing = useInsetSpacing
-        self.spacing = spacing
-        cardsView = UIView(frame: frame)
-        self.numberOfItems = numberOfItems
-        self.identifier = identifier
-        self.delegate = delegate
-        self.pageDotColor = pageDotColor
-        self.selectedPageDotColor = selectedPageDotColor
-        self.usePageIndicator = usePageIndicator
-        self.pageIndicatorPosition = pageIndicatorPosition
-        setupPageControl(frame: frame)
-        setupCollectionView(frame: frame, cellNib: cellNib)
+        self.spacing = config.spacing
+        cardsView = config.containerView
+        self.numberOfItems = config.numberOfItems
+        self.identifier = config.identifier
+        self.delegate = config.delegate
+        self.pageDotColor = config.pageDotColor
+        self.selectedPageDotColor = config.selectedPageDotColor
+        self.usePageIndicator = config.usePageIndicator
+        self.peakSize = config.peakSize
+        setupPageControl()
+        setupCollectionView(cellNib: config.cellNib)
         configureCollectionViewLayoutItemSize()
         cardsView.clipsToBounds = false
         collectionView.clipsToBounds = false
     }
     
-    private func setupPageControl(frame: CGRect) {
-        pageControl = FlexiblePageControl(frame: CGRect(x: 0, y: 0, width: frame.width, height: 33))
+    private func setupPageControl() {
+        pageControl = FlexiblePageControl()
         pageControl.numberOfPages = numberOfItems
         pageControl.isUserInteractionEnabled = false
         pageControl.pageIndicatorTintColor = pageDotColor
@@ -83,18 +101,14 @@ public final class SwipingCardsManager: NSObject {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         pageControl.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
-        if self.pageIndicatorPosition == .top {
-            pageControl.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
-        } else {
-            pageControl.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
-        }
-        pageControl.heightAnchor.constraint(equalToConstant: 33)
+        pageControl.topAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
+        pageControl.heightAnchor.constraint(equalToConstant: 33).isActive = true
     }
     
-    private func setupCollectionView(frame: CGRect, cellNib: UINib) {
+    private func setupCollectionView(cellNib: UINib) {
         collectionViewLayout.scrollDirection = .horizontal
         collectionViewLayout.minimumLineSpacing = spacing
-        collectionView = UICollectionView(frame: frame, collectionViewLayout: collectionViewLayout)
+        collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
@@ -111,13 +125,8 @@ public final class SwipingCardsManager: NSObject {
         collectionView.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
         if usePageIndicator {
-            if self.pageIndicatorPosition == .top {
-                collectionView.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
-                collectionView.topAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
-            } else {
-                collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
-                collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
-            }
+            collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
+            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
         } else {
             collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
             collectionView.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
@@ -125,27 +134,9 @@ public final class SwipingCardsManager: NSObject {
         collectionView.layoutIfNeeded()
     }
     
-    private func calculateSectionInset() -> CGFloat {
-        let deviceIsIpad = UIDevice.current.userInterfaceIdiom == .pad
-        let deviceOrientationIsLandscape = UIDevice.current.orientation.isLandscape
-        let cellBodyViewIsExpended = deviceIsIpad || deviceOrientationIsLandscape
-        let cellBodyWidth: CGFloat = 236 + (cellBodyViewIsExpended ? 174 : 0)
-        
-        let buttonWidth: CGFloat = 0
-        
-        let inset = (collectionViewLayout.collectionView!.frame.width - cellBodyWidth + buttonWidth) / 4
-        return inset
-    }
-    
     private func configureCollectionViewLayoutItemSize() {
-        let inset: CGFloat = calculateSectionInset() // This inset calculation is some magic so the next and the previous cells will peek from the sides. Don't worry about it
-        if useInsetSpacing {
-            collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
-        } else {
-            collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
-        }
-        
-        collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.width - (spacing + 0.5) * 2, height: collectionViewLayout.collectionView!.frame.size.height)
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
+        collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.width - (spacing + peakSize) * 2, height: collectionViewLayout.collectionView!.frame.size.height)
     }
     
     private func indexOfMajorCell() -> Int {

@@ -48,16 +48,9 @@ class ViewController: UIViewController {
          6. spacing between cards defaults to 0
          =================================================
          */
-        swipingCardsManager = SwipingCardsManager(frame: scrollingCardsContainer.bounds ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, useInsetSpacing: true, usePageIndicator: true, pageIndicatorPosition: .bottom)
-        // grab cards view
-        scrollingCardsView = swipingCardsManager.cardsView
-        // add subview and constraints
-        scrollingCardsContainer.addSubview(scrollingCardsView)
-        scrollingCardsView.translatesAutoresizingMaskIntoConstraints = false
-        scrollingCardsView.leadingAnchor.constraint(equalTo: scrollingCardsContainer.leadingAnchor).isActive = true
-        scrollingCardsView.trailingAnchor.constraint(equalTo: scrollingCardsContainer.trailingAnchor).isActive = true
-        scrollingCardsView.topAnchor.constraint(equalTo: scrollingCardsContainer.topAnchor).isActive = true
-        scrollingCardsView.bottomAnchor.constraint(equalTo: scrollingCardsContainer.bottomAnchor).isActive = true
+        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25)
+        swipingCardsManager = SwipingCardsManager(config: config)
+        
     }
 
 }
