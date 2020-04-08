@@ -54,7 +54,7 @@ public struct SwipingCardsConfigurationModel {
 @available(iOS 9.0, *)
 public final class SwipingCardsManager: NSObject {
     private var config: SwipingCardsConfigurationModel!
-    public var cardsView: UIView!
+    private var cardsView: UIView!
     private var collectionView: UICollectionView!
     private var collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     private var indexOfCellBeforeDragging = 0
@@ -67,6 +67,9 @@ public final class SwipingCardsManager: NSObject {
         self.config = config
         cardsView = config.containerView
         self.delegate = config.delegate
+    }
+    
+    public func showCards() {
         setupUI()
     }
     
@@ -121,6 +124,7 @@ public final class SwipingCardsManager: NSObject {
         } else {
             collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
             collectionView.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
+            pageControl.isHidden = true
         }
         collectionView.layoutIfNeeded()
     }

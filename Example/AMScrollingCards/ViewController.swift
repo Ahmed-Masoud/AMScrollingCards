@@ -40,16 +40,20 @@ class ViewController: UIViewController {
         /*
          Initialize instance of manager by passing
          ================================================
-         1. the enclosing frame
+         1. the enclosing View
          2. number of cards
          3. custom cell identifier
          4. delegate
          5. nib file of custom cell
-         6. spacing between cards defaults to 0
+         6. spacing between cards defaults to 10
+         7. if module should add a page indicator
+         8. page indicator colors
+         9. peak size
          =================================================
          */
-        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25)
+        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: false, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25)
         swipingCardsManager = SwipingCardsManager(config: config)
+        swipingCardsManager.showCards()
         
     }
 
