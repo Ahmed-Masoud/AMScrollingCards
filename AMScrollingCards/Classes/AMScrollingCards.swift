@@ -24,8 +24,8 @@ public struct SwipingCardsConfigurationModel {
     var cellNib: UINib
     var spacing: CGFloat = 10
     var usePageIndicator: Bool
-    var selectedPageDotColor: UIColor?
-    var pageDotColor: UIColor?
+    var selectedPageDotColor: UIColor
+    var pageDotColor: UIColor
     var peakSize: CGFloat = 25
     
     public init(containerView: UIView,
@@ -35,8 +35,8 @@ public struct SwipingCardsConfigurationModel {
          cellNib: UINib,
          spacing: CGFloat = 0,
          usePageIndicator: Bool = true,
-         selectedPageDotColor: UIColor?,
-         pageDotColor: UIColor?,
+         selectedPageDotColor: UIColor,
+         pageDotColor: UIColor,
          peakSize: CGFloat = 25) {
         self.containerView = containerView
         self.numberOfItems = numberOfItems
@@ -53,35 +53,26 @@ public struct SwipingCardsConfigurationModel {
 
 @available(iOS 9.0, *)
 public final class SwipingCardsManager: NSObject {
-    
+    private var config: SwipingCardsConfigurationModel!
     public var cardsView: UIView!
-    private var pageDotColor: UIColor!
-    private var selectedPageDotColor: UIColor!
     private var collectionView: UICollectionView!
     private var collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    private var numberOfItems: Int = 0
     private var indexOfCellBeforeDragging = 0
     private var lastIndex = 0
     private var pageControl: FlexiblePageControl!
-    private var spacing: CGFloat!
     weak var delegate: SwipingCardsManagerDelegate?
-    private var identifier: String!
-    private var peakSize: CGFloat!
-    private var usePageIndicator: Bool!
     
     public init(config: SwipingCardsConfigurationModel) {
         super.init()
-        self.spacing = config.spacing
+        self.config = config
         cardsView = config.containerView
-        self.numberOfItems = config.numberOfItems
-        self.identifier = config.identifier
         self.delegate = config.delegate
-        self.pageDotColor = config.pageDotColor
-        self.selectedPageDotColor = config.selectedPageDotColor
-        self.usePageIndicator = config.usePageIndicator
-        self.peakSize = config.peakSize
+        setupUI()
+    }
+    
+    private func setupUI() {
         setupPageControl()
-        setupCollectionView(cellNib: config.cellNib)
+        setupCollectionView()
         configureCollectionViewLayoutItemSize()
         cardsView.clipsToBounds = false
         collectionView.clipsToBounds = false
@@ -89,10 +80,10 @@ public final class SwipingCardsManager: NSObject {
     
     private func setupPageControl() {
         pageControl = FlexiblePageControl()
-        pageControl.numberOfPages = numberOfItems
+        pageControl.numberOfPages = config.numberOfItems
         pageControl.isUserInteractionEnabled = false
-        pageControl.pageIndicatorTintColor = pageDotColor
-        pageControl.currentPageIndicatorTintColor = selectedPageDotColor
+        pageControl.pageIndicatorTintColor = config.pageDotColor
+        pageControl.currentPageIndicatorTintColor = config.selectedPageDotColor
         setupPageControlConstraints()
     }
     
@@ -105,16 +96,16 @@ public final class SwipingCardsManager: NSObject {
         pageControl.heightAnchor.constraint(equalToConstant: 33).isActive = true
     }
     
-    private func setupCollectionView(cellNib: UINib) {
+    private func setupCollectionView() {
         collectionViewLayout.scrollDirection = .horizontal
-        collectionViewLayout.minimumLineSpacing = spacing
+        collectionViewLayout.minimumLineSpacing = config.spacing
         collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "identifier")
-        collectionView.register(cellNib, forCellWithReuseIdentifier: identifier)
+        collectionView.register(config.cellNib, forCellWithReuseIdentifier: config.identifier)
         collectionView.clipsToBounds = false
         setupCollectionViewConstraints()
     }
@@ -124,7 +115,7 @@ public final class SwipingCardsManager: NSObject {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
-        if usePageIndicator {
+        if config.usePageIndicator {
             collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
             collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
         } else {
@@ -135,15 +126,15 @@ public final class SwipingCardsManager: NSObject {
     }
     
     private func configureCollectionViewLayoutItemSize() {
-        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: spacing)
-        collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.width - (spacing + peakSize) * 2, height: collectionViewLayout.collectionView!.frame.size.height)
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: config.spacing, bottom: 0, right: config.spacing)
+        collectionViewLayout.itemSize = CGSize(width: collectionViewLayout.collectionView!.frame.width - (config.spacing + config.peakSize) * 2, height: collectionViewLayout.collectionView!.frame.size.height)
     }
     
     private func indexOfMajorCell() -> Int {
         let itemWidth = collectionViewLayout.itemSize.width
         let proportionalOffset = collectionViewLayout.collectionView!.contentOffset.x / itemWidth
         let index = Int(round(proportionalOffset))
-        let safeIndex = max(0, min(numberOfItems - 1, index))
+        let safeIndex = max(0, min(config.numberOfItems - 1, index))
         return safeIndex
     }
     
@@ -168,7 +159,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
         
         // calculate conditions:
         let swipeVelocityThreshold: CGFloat = 0.5 // after some trail and error
-        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < numberOfItems && velocity.x > swipeVelocityThreshold
+        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < config.numberOfItems && velocity.x > swipeVelocityThreshold
         let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
         let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
         let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
@@ -187,11 +178,11 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfItems
+        return config.numberOfItems
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: config.identifier, for: indexPath)
         return delegate?.getCellForIndexPath(cell: cell, indexPath: indexPath) ?? UICollectionViewCell()
     }
     
