@@ -29,15 +29,15 @@ public struct SwipingCardsConfigurationModel {
     var peakSize: CGFloat = 25
     
     public init(containerView: UIView,
-         numberOfItems: Int,
-         identifier: String,
-         delegate: SwipingCardsManagerDelegate,
-         cellNib: UINib,
-         spacing: CGFloat = 0,
-         usePageIndicator: Bool = true,
-         selectedPageDotColor: UIColor,
-         pageDotColor: UIColor,
-         peakSize: CGFloat = 25) {
+                numberOfItems: Int,
+                identifier: String,
+                delegate: SwipingCardsManagerDelegate,
+                cellNib: UINib,
+                spacing: CGFloat = 0,
+                usePageIndicator: Bool = true,
+                selectedPageDotColor: UIColor,
+                pageDotColor: UIColor,
+                peakSize: CGFloat = 25) {
         self.containerView = containerView
         self.numberOfItems = numberOfItems
         self.identifier = identifier
@@ -70,7 +70,11 @@ public final class SwipingCardsManager: NSObject {
     }
     
     public func showCards() {
-        setupUI()
+        UIView.animate(withDuration: 0, animations: {
+            self.setupUI()
+        }) { (_) in
+            self.animateScaling()
+        }
     }
     
     private func setupUI() {
@@ -149,6 +153,27 @@ public final class SwipingCardsManager: NSObject {
             collectionView.reloadItems(at: indexPaths)
         }
     }
+    
+    private func animateScaling() {
+        let cell = collectionView.cellForItem(at: IndexPath(row: indexOfMajorCell(), section: 0))
+        let visibleCells = collectionView.visibleCells.filter({$0 != cell})
+        var scaleUpTransform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        var scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIView.animate(withDuration: 0.2) {
+            if self.indexOfMajorCell() == 0 {
+                scaleUpTransform = scaleUpTransform.translatedBy(x: 10, y: 0)
+                scaleDownTransform = scaleDownTransform.translatedBy(x: 10, y: 0)
+                cell?.transform = scaleUpTransform
+            } else if self.indexOfMajorCell() == (self.config.numberOfItems - 1) {
+                scaleUpTransform = scaleUpTransform.translatedBy(x: -10, y: 0)
+                scaleDownTransform = scaleDownTransform.translatedBy(x: -10, y: 0)
+                cell?.transform = scaleUpTransform
+            } else {
+                cell?.transform = scaleUpTransform
+            }
+            visibleCells.forEach({$0.transform = scaleDownTransform})
+        }
+    }
 }
 
 @available(iOS 9.0, *)
@@ -187,6 +212,10 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: config.identifier, for: indexPath)
+        let scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIView.animate(withDuration: 0.2) {
+            cell.transform = scaleDownTransform
+        }
         return delegate?.getCellForIndexPath(cell: cell, indexPath: indexPath) ?? UICollectionViewCell()
     }
     
@@ -200,6 +229,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
             lastIndex = currentIndex
             pageControl.setCurrentPage(at: indexOfMajorCell(), animated: true)
             delegate?.didChangeCard(index: indexOfMajorCell())
+            animateScaling()
         }
     }
     
