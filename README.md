@@ -16,10 +16,10 @@ it, simply add the following line to your Podfile:
 pod 'AMScrollingCards'
 ```
 ## Description
-This pod was created to offer a ui component of paginated swiping horizontal cards with a peek of next and previous cards using a collection view to make sure its reliable and memory efficient
+This pod was created to offer a ui component of paginated swiping horizontal cards with a focusing animation on the currently selected card with a peek of next and previous cards using a collection view to make sure its reliable and memory efficient
 
 ## Demo
-![Alt Text](https://media.giphy.com/media/RIqAPIwjXomLZXD6XC/giphy.gif)
+![Alt Text](https://media.giphy.com/media/W2nP3cW7U4GbW6mswK/giphy.gif)
 
 ## Usage
 ```swift
@@ -35,6 +35,7 @@ This pod was created to offer a ui component of paginated swiping horizontal car
          7. if module should add a page indicator
          8. page indicator colors
          9. peak size which is the size of the left and right cards that should be shown
+         10. if the cards should use animation to focus on selected card
          =================================================
 */
 let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,
@@ -46,7 +47,8 @@ let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContain
                                                     usePageIndicator: false,
                                                     selectedPageDotColor: UIColor.red,
                                                     pageDotColor: UIColor.blue,
-                                                    peakSize: 25)
+                                                    peakSize: 25,
+                                                    shouldUseScaleAnimation: true)
 // init module mannager
 swipingCardsManager = SwipingCardsManager(config: config)
 // simply show the cards
