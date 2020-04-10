@@ -22,22 +22,24 @@ public struct SwipingCardsConfigurationModel {
     var identifier: String
     var delegate: SwipingCardsManagerDelegate
     var cellNib: UINib
-    var spacing: CGFloat = 10
+    var spacing: CGFloat
     var usePageIndicator: Bool
     var selectedPageDotColor: UIColor
     var pageDotColor: UIColor
-    var peakSize: CGFloat = 25
+    var peakSize: CGFloat
+    var shouldUseScaleAnimation: Bool
     
     public init(containerView: UIView,
                 numberOfItems: Int,
                 identifier: String,
                 delegate: SwipingCardsManagerDelegate,
                 cellNib: UINib,
-                spacing: CGFloat = 0,
+                spacing: CGFloat = 10,
                 usePageIndicator: Bool = true,
                 selectedPageDotColor: UIColor,
                 pageDotColor: UIColor,
-                peakSize: CGFloat = 25) {
+                peakSize: CGFloat = 25,
+                shouldUseScaleAnimation: Bool = true) {
         self.containerView = containerView
         self.numberOfItems = numberOfItems
         self.identifier = identifier
@@ -48,6 +50,7 @@ public struct SwipingCardsConfigurationModel {
         self.pageDotColor = pageDotColor
         self.selectedPageDotColor = selectedPageDotColor
         self.usePageIndicator = usePageIndicator
+        self.shouldUseScaleAnimation = shouldUseScaleAnimation
     }
 }
 
@@ -70,10 +73,14 @@ public final class SwipingCardsManager: NSObject {
     }
     
     public func showCards() {
-        UIView.animate(withDuration: 0, animations: {
+        UIView.animate(withDuration: 0, animations: { [weak self] in
+            guard let self = self else { return }
             self.setupUI()
-        }) { (_) in
-            self.animateScaling()
+        }) { [weak self] (_) in
+            guard let self = self else { return }
+            if self.config.shouldUseScaleAnimation {
+                self.animateScaling()
+            }
         }
     }
     
@@ -159,7 +166,8 @@ public final class SwipingCardsManager: NSObject {
         let visibleCells = collectionView.visibleCells.filter({$0 != cell})
         var scaleUpTransform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         var scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            guard let self = self else { return }
             if self.indexOfMajorCell() == 0 {
                 scaleUpTransform = scaleUpTransform.translatedBy(x: 10, y: 0)
                 scaleDownTransform = scaleDownTransform.translatedBy(x: 10, y: 0)
@@ -212,9 +220,11 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: config.identifier, for: indexPath)
-        let scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        UIView.animate(withDuration: 0.2) {
-            cell.transform = scaleDownTransform
+        if config.shouldUseScaleAnimation {
+            let scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            UIView.animate(withDuration: 0.2) {
+                cell.transform = scaleDownTransform
+            }
         }
         return delegate?.getCellForIndexPath(cell: cell, indexPath: indexPath) ?? UICollectionViewCell()
     }
@@ -229,7 +239,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
             lastIndex = currentIndex
             pageControl.setCurrentPage(at: indexOfMajorCell(), animated: true)
             delegate?.didChangeCard(index: indexOfMajorCell())
-            animateScaling()
+            if config.shouldUseScaleAnimation { animateScaling() }
         }
     }
     
