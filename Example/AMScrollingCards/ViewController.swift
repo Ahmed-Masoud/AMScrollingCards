@@ -32,6 +32,15 @@ class ViewController: UIViewController {
         data.append(CardData(color: UIColor.red, title: "Card 1"))
         data.append(CardData(color: UIColor.yellow, title: "Card 2"))
         data.append(CardData(color: UIColor.green, title: "Card 3"))
+        data.append(CardData(color: UIColor.red, title: "Card 1"))
+        data.append(CardData(color: UIColor.yellow, title: "Card 2"))
+        data.append(CardData(color: UIColor.green, title: "Card 3"))
+        data.append(CardData(color: UIColor.red, title: "Card 1"))
+        data.append(CardData(color: UIColor.yellow, title: "Card 2"))
+        data.append(CardData(color: UIColor.green, title: "Card 3"))
+        data.append(CardData(color: UIColor.red, title: "Card 1"))
+        data.append(CardData(color: UIColor.yellow, title: "Card 2"))
+        data.append(CardData(color: UIColor.green, title: "Card 3"))
         
     }
     
@@ -52,7 +61,7 @@ class ViewController: UIViewController {
          10. if the cards should use animation to focus on selected card
          =================================================
          */
-        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25, shouldUseScaleAnimation: true)
+        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25, shouldUseScaleAnimation: false)
         swipingCardsManager = SwipingCardsManager(config: config)
         swipingCardsManager.showCards()
         

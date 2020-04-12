@@ -1,5 +1,5 @@
 PODS:
-  - AMScrollingCards (1.1.2):
+  - AMScrollingCards (1.2.1):
     - FlexiblePageControl
   - FlexiblePageControl (1.0.8)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AMScrollingCards: 039d09d7ec76a6e5d87bb4670edd32fb58cc36ea
+  AMScrollingCards: f562277b319a2bdf014fecfb788398591a138edf
   FlexiblePageControl: 07f7765054f16b3f0bc3f14dfd95ab5f45817ea4
 
 PODFILE CHECKSUM: 1c8e04997b20e24e31dcc14a1fdd0a8669a5cb9f

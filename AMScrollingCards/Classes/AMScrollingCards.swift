@@ -62,6 +62,7 @@ public final class SwipingCardsManager: NSObject {
     private var collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     private var indexOfCellBeforeDragging = 0
     private var lastIndex = 0
+    private var lastOffset: CGFloat = 0
     private var pageControl: FlexiblePageControl!
     weak var delegate: SwipingCardsManagerDelegate?
     
@@ -147,8 +148,13 @@ public final class SwipingCardsManager: NSObject {
     
     private func indexOfMajorCell() -> Int {
         let itemWidth = collectionViewLayout.itemSize.width
-        let proportionalOffset = collectionViewLayout.collectionView!.contentOffset.x / itemWidth
-        let index = Int(round(proportionalOffset))
+        let proportionalOffset = (collectionViewLayout.collectionView!.contentOffset.x) / itemWidth
+        var index = 0
+        if lastOffset > collectionViewLayout.collectionView!.contentOffset.x {
+            index = Int(proportionalOffset)
+        } else {
+            index = Int(round(proportionalOffset))
+        }
         let safeIndex = max(0, min(config.numberOfItems - 1, index))
         return safeIndex
     }
@@ -241,6 +247,22 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
             delegate?.didChangeCard(index: indexOfMajorCell())
             if config.shouldUseScaleAnimation { animateScaling() }
         }
+        lastOffset = collectionViewLayout.collectionView!.contentOffset.x
+    }
+    
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        if config.shouldUseScaleAnimation {
+            if self.indexOfMajorCell() == 0 {
+                scaleDownTransform = scaleDownTransform.translatedBy(x: 10, y: 0)
+            } else if self.indexOfMajorCell() == (self.config.numberOfItems - 1) {
+                scaleDownTransform = scaleDownTransform.translatedBy(x: -10, y: 0)
+            }
+            let visibleCells = collectionView.visibleCells.filter({$0 != collectionView.cellForItem(at: IndexPath(row: indexOfMajorCell(), section: 0))})
+            visibleCells.forEach({$0.transform = scaleDownTransform})
+        }
+        
     }
     
     
