@@ -107,7 +107,7 @@ public final class SwipingCardsManager: NSObject {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         pageControl.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
-        pageControl.topAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
         pageControl.heightAnchor.constraint(equalToConstant: 33).isActive = true
     }
     
@@ -130,12 +130,11 @@ public final class SwipingCardsManager: NSObject {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.leadingAnchor.constraint(equalTo: cardsView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: cardsView.trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
         if config.usePageIndicator {
-            collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
             collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor).isActive = true
         } else {
-            collectionView.topAnchor.constraint(equalTo: cardsView.topAnchor).isActive = true
-            collectionView.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor).isActive = true
+            collectionView.bottomAnchor.constraint(equalTo: cardsView.bottomAnchor).isActive = true
             pageControl.isHidden = true
         }
         collectionView.layoutIfNeeded()
