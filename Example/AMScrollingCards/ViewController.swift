@@ -61,7 +61,7 @@ class ViewController: UIViewController {
          10. if the cards should use animation to focus on selected card
          =================================================
          */
-        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25, shouldUseScaleAnimation: false)
+        let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25, shouldUseScaleAnimation: true)
         swipingCardsManager = SwipingCardsManager(config: config)
         swipingCardsManager.showCards()
         

@@ -245,8 +245,9 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
             pageControl.setCurrentPage(at: indexOfMajorCell(), animated: true)
             delegate?.didChangeCard(index: indexOfMajorCell())
             if config.shouldUseScaleAnimation { animateScaling() }
+            lastOffset = collectionViewLayout.collectionView!.contentOffset.x
         }
-        lastOffset = collectionViewLayout.collectionView!.contentOffset.x
+        
     }
     
     
