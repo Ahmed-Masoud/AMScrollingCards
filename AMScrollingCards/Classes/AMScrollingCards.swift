@@ -55,7 +55,7 @@ public struct SwipingCardsConfigurationModel {
 }
 
 @available(iOS 9.0, *)
-public final class SwipingCardsManager: NSObject {
+public class SwipingCardsManager: NSObject {
     private var config: SwipingCardsConfigurationModel!
     private var cardsView: UIView!
     private var collectionView: UICollectionView!
