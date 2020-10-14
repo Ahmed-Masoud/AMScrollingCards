@@ -85,6 +85,47 @@ public class SwipingCardsManager: NSObject {
         }
     }
     
+    
+    /// Scroll to item at index, will do nothing if index > config.numberOfItems or index < 0
+    /// - Parameters:
+    ///   - indexPath: Int row value to scroll to
+    ///   - at: at item position UICollectionView.ScrollPosition default = .centeredHorizontally
+    ///   - animated: Bool for animated scroll. Default = true
+    public func scrollTo(index:Int, at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
+        guard index >= 0, index < config.numberOfItems else { return }
+        let duration = animated ? 0.2 : 0.0
+        UIView.animate(withDuration: duration) { [weak self] in
+            self?.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: at, animated: false)
+        } completion: { [weak self] (_) in
+            guard let self = self else { return }
+            self.lastOffset = self.collectionViewLayout.collectionView!.contentOffset.x
+            self.lastIndex = self.indexOfMajorCell()
+            self.pageControl.setCurrentPage(at: self.lastIndex, animated: true)
+            self.delegate?.didChangeCard(index: self.lastIndex)
+            if self.config.shouldUseScaleAnimation { self.animateScaling() }
+        }
+    }
+    
+    /// Scroll to next item, will do nothing if next item index > config.numberOfItems or next item index < 0
+    /// - Parameters:
+    ///   - indexPath: Int row value to scroll to
+    ///   - at: at item position UICollectionView.ScrollPosition. Default = .centeredHorizontally
+    ///   - animated: Bool for animated scroll. Default = true
+    public func scrollToNext(at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
+        let nextIndex = indexOfMajorCell()+1
+        scrollTo(index: nextIndex, at: at, animated: animated)
+    }
+    
+    /// Scroll to previous item, will do nothing if previous item index > config.numberOfItems or previous item index < 0
+    /// - Parameters:
+    ///   - indexPath: Int row value to scroll to
+    ///   - at: at item position UICollectionView.ScrollPosition default = .centeredHorizontally
+    ///   - animated: Bool for animated scroll. Default = true
+    public func scrollToPrevious(at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
+        let previousIndex = indexOfMajorCell()-1
+        scrollTo(index: previousIndex, at: at, animated: animated)
+    }
+    
     private func setupUI() {
         setupPageControl()
         setupCollectionView()
