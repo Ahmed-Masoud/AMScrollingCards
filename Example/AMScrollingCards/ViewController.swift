@@ -41,11 +41,14 @@ class ViewController: UIViewController {
         data.append(CardData(color: UIColor.red, title: "Card 1"))
         data.append(CardData(color: UIColor.yellow, title: "Card 2"))
         data.append(CardData(color: UIColor.green, title: "Card 3"))
-        
+        setupSwipingCardsManager()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    func setupSwipingCardsManager() {
         /*
          Initialize instance of manager by passing
          ================================================
@@ -64,7 +67,22 @@ class ViewController: UIViewController {
         let config = SwipingCardsConfigurationModel(containerView: scrollingCardsContainer ,numberOfItems: data.count,identifier: "cardCell", delegate: self, cellNib: UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), spacing: 10, usePageIndicator: true, selectedPageDotColor: UIColor.red, pageDotColor: UIColor.blue, peakSize: 25, shouldUseScaleAnimation: true)
         swipingCardsManager = SwipingCardsManager(config: config)
         swipingCardsManager.showCards()
-        
+    }
+    
+    @IBAction func previousAction(_ sender: Any) {
+        swipingCardsManager.scrollToPrevious()
+    }
+    
+    @IBAction func previousNoAnimationAction(_ sender: Any) {
+        swipingCardsManager.scrollToPrevious(animated: false)
+    }
+    
+    @IBAction func nextAction(_ sender: Any) {
+        swipingCardsManager.scrollToNext()
+    }
+    
+    @IBAction func nextNoAnimationAction(_ sender: Any) {
+        swipingCardsManager.scrollToNext(animated: false)
     }
 
 }
