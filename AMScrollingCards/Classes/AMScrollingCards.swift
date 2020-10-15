@@ -16,6 +16,11 @@ public protocol SwipingCardsManagerDelegate: class {
     func didChangeCard(index: Int)
 }
 
+extension SwipingCardsManagerDelegate {
+    // making this delegate function optional
+    func didChangeCard(index: Int){}
+}
+
 public struct SwipingCardsConfigurationModel {
     var containerView: UIView
     var numberOfItems: Int
@@ -55,7 +60,7 @@ public struct SwipingCardsConfigurationModel {
 }
 
 @available(iOS 9.0, *)
-public final class SwipingCardsManager: NSObject {
+public class SwipingCardsManager: NSObject {
     private var config: SwipingCardsConfigurationModel!
     private var cardsView: UIView!
     private var collectionView: UICollectionView!
@@ -73,6 +78,8 @@ public final class SwipingCardsManager: NSObject {
         self.delegate = config.delegate
     }
     
+    //MARK: Public methods
+    
     public func showCards() {
         UIView.animate(withDuration: 0, animations: { [weak self] in
             guard let self = self else { return }
@@ -84,6 +91,56 @@ public final class SwipingCardsManager: NSObject {
             }
         }
     }
+    
+    public func reloadCollection(indexPaths: [IndexPath]) {
+        if indexPaths.isEmpty {
+            collectionView.reloadData()
+        } else {
+            collectionView.reloadItems(at: indexPaths)
+        }
+    }
+    
+    /// Scroll to item at index, will do nothing if index > config.numberOfItems or index < 0
+    /// - Parameters:
+    ///   - indexPath: Int row value to scroll to
+    ///   - at: at item position UICollectionView.ScrollPosition default = .centeredHorizontally
+    ///   - animated: Bool for animated scroll. Default = true
+    public func scrollTo(index:Int, at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
+        guard index >= 0, index < config.numberOfItems else { return }
+        let duration = animated ? 0.2 : 0.0
+        UIView.animate(withDuration: duration) { [weak self] in
+            self?.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: at, animated: false)
+        } completion: { [weak self] (_) in
+            guard let self = self else { return }
+            self.lastOffset = self.collectionViewLayout.collectionView!.contentOffset.x
+            self.lastIndex = self.indexOfMajorCell()
+            self.pageControl.setCurrentPage(at: self.lastIndex, animated: true)
+            self.delegate?.didChangeCard(index: self.lastIndex)
+            if self.config.shouldUseScaleAnimation { self.animateScaling() }
+        }
+    }
+    
+    /// Scroll to next item, will do nothing if next item index > config.numberOfItems or next item index < 0
+    /// - Parameters:
+    ///   - indexPath: Int row value to scroll to
+    ///   - at: at item position UICollectionView.ScrollPosition. Default = .centeredHorizontally
+    ///   - animated: Bool for animated scroll. Default = true
+    public func scrollToNext(at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
+        let nextIndex = indexOfMajorCell()+1
+        scrollTo(index: nextIndex, at: at, animated: animated)
+    }
+    
+    /// Scroll to previous item, will do nothing if previous item index > config.numberOfItems or previous item index < 0
+    /// - Parameters:
+    ///   - indexPath: Int row value to scroll to
+    ///   - at: at item position UICollectionView.ScrollPosition default = .centeredHorizontally
+    ///   - animated: Bool for animated scroll. Default = true
+    public func scrollToPrevious(at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
+        let previousIndex = indexOfMajorCell()-1
+        scrollTo(index: previousIndex, at: at, animated: animated)
+    }
+    
+    //MARK: Private methods
     
     private func setupUI() {
         setupPageControl()
@@ -156,14 +213,6 @@ public final class SwipingCardsManager: NSObject {
         }
         let safeIndex = max(0, min(config.numberOfItems - 1, index))
         return safeIndex
-    }
-    
-    public func reloadCollection(indexPaths: [IndexPath]) {
-        if indexPaths.isEmpty {
-            collectionView.reloadData()
-        } else {
-            collectionView.reloadItems(at: indexPaths)
-        }
     }
     
     private func animateScaling() {
@@ -250,7 +299,6 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
         
     }
     
-    
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var scaleDownTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         if config.shouldUseScaleAnimation {
@@ -262,44 +310,7 @@ extension SwipingCardsManager: UICollectionViewDataSource, UICollectionViewDeleg
             let visibleCells = collectionView.visibleCells.filter({$0 != collectionView.cellForItem(at: IndexPath(row: indexOfMajorCell(), section: 0))})
             visibleCells.forEach({$0.transform = scaleDownTransform})
         }
-        
-    }
-    
-    
-}
-
-
-
-extension UIColor {
-    convenience init(hexString: String, alpha: CGFloat = 1.0) {
-        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        let scanner = Scanner(string: hexString)
-        if (hexString.hasPrefix("#")) {
-            scanner.scanLocation = 1
-        }
-        var color: UInt32 = 0
-        scanner.scanHexInt32(&color)
-        let mask = 0x000000FF
-        let r = Int(color >> 16) & mask
-        let g = Int(color >> 8) & mask
-        let b = Int(color) & mask
-        let red   = CGFloat(r) / 255.0
-        let green = CGFloat(g) / 255.0
-        let blue  = CGFloat(b) / 255.0
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
-    }
-    func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-        return String(format:"#%06x", rgb)
     }
 }
 
-extension SwipingCardsManagerDelegate {
-    // making this delegate function optional
-    func didChangeCard(index: Int){}
-}
+

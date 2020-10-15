@@ -218,7 +218,6 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 6CSKQ286Y3;
 						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -494,7 +493,7 @@
 			baseConfigurationReference = 013CE9289D1F1C41961D4847 /* Pods-AMScrollingCards_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6CSKQ286Y3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AMScrollingCards/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -510,7 +509,7 @@
 			baseConfigurationReference = 382BE51F030541BD017A309C /* Pods-AMScrollingCards_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6CSKQ286Y3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AMScrollingCards/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

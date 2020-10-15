@@ -1,5 +1,5 @@
 PODS:
-  - AMScrollingCards (1.2.1):
+  - AMScrollingCards (1.2.4):
     - FlexiblePageControl
   - FlexiblePageControl (1.0.8)
 
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - AMScrollingCards (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FlexiblePageControl
 
 EXTERNAL SOURCES:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AMScrollingCards: f562277b319a2bdf014fecfb788398591a138edf
+  AMScrollingCards: 3eea139f1447019c0bf13953d2aa69af60c52305
   FlexiblePageControl: 07f7765054f16b3f0bc3f14dfd95ab5f45817ea4
 
 PODFILE CHECKSUM: 1c8e04997b20e24e31dcc14a1fdd0a8669a5cb9f
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,12 +26,51 @@
                                     <constraint firstAttribute="height" constant="100" id="x1D-GO-mRn"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-Ft-tKh">
+                                <rect key="frame" x="99.5" y="215.5" width="176" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91I-pp-9eR">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="&lt;&lt;"/>
+                                        <connections>
+                                            <action selector="previousNoAnimationAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pnx-Sw-mBz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJN-gW-e2w">
+                                        <rect key="frame" x="52" y="0.0" width="30" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="&lt;"/>
+                                        <connections>
+                                            <action selector="previousAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dSa-5z-T14"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWe-Bp-5FR">
+                                        <rect key="frame" x="94" y="0.0" width="30" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="&gt;"/>
+                                        <connections>
+                                            <action selector="nextAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cpj-g0-lu9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfc-Bg-ZjO">
+                                        <rect key="frame" x="136" y="0.0" width="40" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="&gt;&gt;"/>
+                                        <connections>
+                                            <action selector="nextNoAnimationAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hoq-v2-dyv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7HC-FE-iwB" firstAttribute="top" secondItem="dZB-Ft-tKh" secondAttribute="bottom" constant="20" id="AdV-WN-qiy"/>
                             <constraint firstItem="7HC-FE-iwB" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="G1h-tu-X4o"/>
                             <constraint firstItem="7HC-FE-iwB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Mhs-Js-Sbg"/>
                             <constraint firstAttribute="trailing" secondItem="7HC-FE-iwB" secondAttribute="trailing" id="N4i-9i-ByP"/>
+                            <constraint firstItem="dZB-Ft-tKh" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="TKJ-jt-RiE"/>
                             <constraint firstItem="7HC-FE-iwB" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="gqV-XB-Xsf"/>
                         </constraints>
                     </view>
