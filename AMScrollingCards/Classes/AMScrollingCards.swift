@@ -108,9 +108,10 @@ public class SwipingCardsManager: NSObject {
     public func scrollTo(index:Int, at: UICollectionView.ScrollPosition = .centeredHorizontally,animated:Bool = true) {
         guard index >= 0, index < config.numberOfItems else { return }
         let duration = animated ? 0.2 : 0.0
-        UIView.animate(withDuration: duration) { [weak self] in
+        UIView.animate(withDuration: duration, animations: {
+            [weak self] in
             self?.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: at, animated: false)
-        } completion: { [weak self] (_) in
+        }) { [weak self] (_) in
             guard let self = self else { return }
             self.lastOffset = self.collectionViewLayout.collectionView!.contentOffset.x
             self.lastIndex = self.indexOfMajorCell()
