@@ -141,6 +141,14 @@ public class SwipingCardsManager: NSObject {
         scrollTo(index: previousIndex, at: at, animated: animated)
     }
     
+    /// Get CollectionViewCell at correspondent index
+    /// - Parameter index: index of cell
+    /// - Returns: CollectionViewCell at given index or nil if index is out of range of config.numberOfItems
+    public func getCell(at index:Int) -> UICollectionViewCell? {
+        guard index >= 0, index < config.numberOfItems else { return nil }
+        return collectionView.cellForItem(at: IndexPath(item: index, section: 0))
+    }
+    
     //MARK: Private methods
     
     private func setupUI() {
